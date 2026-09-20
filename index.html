@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Taramundi Bar & Restaurante Gourmet - Valladolid. Hamburguesas, tapas, bocatas y más. ⭐ 4.5 (205 reseñas). ¡Pide online por WhatsApp!">
+    <meta name="keywords" content="bar valladolid, restaurante valladolid, hamburguesas valladolid, tapas, bocatas, pedido online whatsapp, taramundi">
+    <title>Taramundi Bar & Restaurante | Valladolid - Pedidos Online</title>
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neon: '#39FF14',
+                        'neon-dark': '#2DD911',
+                        'neon-glow': '#32E512',
+                    }
+                }
+            }
+        }
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Taramundi Bar & Restaurante Gourmet | Valladolid">
+    <meta property="og:description" content="Hamburguesas, tapas, bocatas y los mejores cocktails. ⭐ 4.5 (205 reseñas). ¡Pide online por WhatsApp!">
+    <meta property="og:image" content="fachada.png">
+    <meta property="og:type" content="restaurant">
+    <meta property="og:locale" content="es_ES">
+
+    <!-- Schema.org JSON-LD para SEO Local -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Taramundi Bar & Restaurante",
+      "image": [
+        "fachada.png",
+        "header-banner.png"
+      ],
+      "url": "https://taramundi-valladolid.com",
+      "@id": "https://taramundi-valladolid.com",
+      "telephone": "+34643512142",
+      "priceRange": "€€",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "C. Embajadores, 14",
+        "addressLocality": "Valladolid",
+        "postalCode": "47013",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 41.6387748,
+        "longitude": -4.7220116
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "00:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Saturday", "Sunday"],
+          "opens": "09:00",
+          "closes": "00:00"
+        }
+      ],
+      "servesCuisine": ["Española", "Tapas", "Hamburguesas", "Bocadillos"],
+      "acceptsReservations": "True",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.5",
+        "reviewCount": "205",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "menu": "https://taramundi-valladolid.com#menu",
+      "hasMenu": {
+        "@type": "Menu",
+        "hasMenuSection": [
+          {
+            "@type": "MenuSection",
+            "name": "Desayunos",
+            "hasMenuItem": [
+              {
+                "@type": "MenuItem",
+                "name": "Tostada + Aceite",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "3.30",
+                  "priceCurrency": "EUR"
+                }
+              },
+              {
+                "@type": "MenuItem",
+                "name": "Americano",
+                "description": "Huevos, bacon, salchichas y tostada",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "4.70",
+                  "priceCurrency": "EUR"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "MenuSection",
+            "name": "Hamburguesas",
+            "hasMenuItem": [
+              {
+                "@type": "MenuItem",
+                "name": "Hamburguesa Taramundi",
+                "description": "Bacon y queso, pepillo, triple carne — ¡La estrella!",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "10.70",
+                  "priceCurrency": "EUR"
+                }
+              },
+              {
+                "@type": "MenuItem",
+                "name": "Suprema Doble",
+                "description": "Doble de carne premium, huevo, bacon y queso",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "9.70",
+                  "priceCurrency": "EUR"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "MenuSection",
+            "name": "Raciones",
+            "hasMenuItem": [
+              {
+                "@type": "MenuItem",
+                "name": "Calamares",
+                "description": "Calamares a la romana",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "11.00",
+                  "priceCurrency": "EUR"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+    </script>
+
+    <!-- Schema.org LocalBusiness adicional -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Taramundi Bar",
+      "image": "fachada.png",
+      "telephone": "+34643512142",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "C. Embajadores, 14",
+        "addressLocality": "Valladolid",
+        "postalCode": "47013",
+        "addressCountry": "ES"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.5",
+        "reviewCount": "205"
+      },
+      "paymentAccepted": "Cash, Credit Card",
+      "currenciesAccepted": "EUR"
+    }
+    </script>
+
+    <style>
+
+        * { font-family: 'Poppins', sans-serif; }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.55) 50%, rgba(0, 0, 0, 0.7) 100%);
+        }
+
+        .glow-neon {
+            box-shadow: 0 0 25px rgba(57, 255, 20, 0.4), 0 0 50px rgba(57, 255, 20, 0.15);
+        }
+
+        .glow-neon-sm {
+            box-shadow: 0 0 15px rgba(57, 255, 20, 0.3);
+        }
+
+        .text-glow {
+            text-shadow: 0 0 20px rgba(57, 255, 20, 0.5);
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .cart-float {
+            position: fixed;
+            bottom: 90px;
+            left: 20px;
+            z-index: 999;
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #ef4444;
+            color: white;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 40px rgba(57, 255, 20, 0.1);
+        }
+
+        .modal-backdrop {
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+        }
+
+        /* Scrollbar personalizada */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a0a; }
+        ::-webkit-scrollbar-thumb { background: #39FF14; border-radius: 4px; }
+    </style>
+</head>
+
+<body class="bg-black text-white overflow-x-hidden" x-data="taramundiApp()">
+
+    <!-- Navbar Fixa -->
+    <nav class="fixed top-0 left-0 right-0 bg-black/95 backdrop-blur-sm border-b border-neon/30 z-50" aria-label="Navegación principal">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <a href="#" class="flex items-center space-x-3">
+                    <img src="logo.png" alt="Taramundi Bar Logo" class="h-10 w-auto" width="40" height="40">
+                    <span class="text-xl font-bold text-neon hidden sm:block">Taramundi</span>
+                </a>
+
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#inicio" class="text-gray-300 hover:text-neon transition">Inicio</a>
+                    <a href="#menu" class="text-gray-300 hover:text-neon transition">Menú</a>
+                    <a href="#nosotros" class="text-gray-300 hover:text-neon transition">Nosotros</a>
+                    <a href="#contacto" class="text-gray-300 hover:text-neon transition">Contacto</a>
+                </div>
+
+                <a href="https://wa.me/34643512142?text=%C2%A1Hola!%20Quiero%20hacer%20una%20reserva%20en%20Taramundi"
+                   class="hidden md:flex items-center space-x-2 bg-neon hover:bg-neon-dark text-black px-6 py-2.5 rounded-full font-bold transition glow-neon-sm">
+                    <i class="ph ph-whatsapp-logo text-xl" aria-hidden="true"></i>
+                    <span>Reservar Mesa</span>
+                </a>
+
+                <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-neon" aria-label="Abrir menú" :aria-expanded="mobileMenuOpen">
+                    <i class="ph ph-list text-3xl" x-show="!mobileMenuOpen" aria-hidden="true"></i>
+                    <i class="ph ph-x text-3xl" x-show="mobileMenuOpen" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menu Mobile -->
+        <div x-show="mobileMenuOpen" x-transition class="md:hidden bg-gray-950 border-t border-neon/20">
+            <div class="container mx-auto px-4 py-4 space-y-3">
+                <a href="#inicio" @click="mobileMenuOpen = false" class="block text-gray-300 hover:text-neon py-2 border-b border-gray-800">Inicio</a>
+                <a href="#menu" @click="mobileMenuOpen = false" class="block text-gray-300 hover:text-neon py-2 border-b border-gray-800">Menú</a>
+                <a href="#nosotros" @click="mobileMenuOpen = false" class="block text-gray-300 hover:text-neon py-2 border-b border-gray-800">Nosotros</a>
+                <a href="#contacto" @click="mobileMenuOpen = false" class="block text-gray-300 hover:text-neon py-2 border-b border-gray-800">Contacto</a>
+                <a href="https://wa.me/34643512142?text=%C2%A1Hola!%20Quiero%20hacer%20una%20reserva%20en%20Taramundi"
+                   class="flex items-center justify-center space-x-2 bg-neon text-black px-6 py-3 rounded-full font-bold mt-3">
+                    <i class="ph ph-whatsapp-logo text-xl" aria-hidden="true"></i>
+                    <span>Reservar Mesa</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+    <!-- Hero Section -->
+    <section id="inicio" class="relative min-h-screen flex items-center justify-center pt-24 md:pt-16">
+        <div class="absolute inset-0 z-0">
+            <img src="fachada.png" alt="Taramundi Bar - Fachada" class="w-full h-full object-cover" width="1920" height="1080">
+            <div class="absolute inset-0 hero-gradient"></div>
+        </div>
+
+        <div class="relative z-10 container mx-auto px-4 text-center fade-in">
+            <div class="inline-flex items-center space-x-2 bg-neon/15 border border-neon/40 px-4 py-2 rounded-full mb-6">
+                <i class="ph-fill ph-star text-yellow-400" aria-hidden="true"></i>
+                <span class="text-sm font-semibold text-neon">4.5 ⭐ · 205 Reseñas en Google</span>
+            </div>
+
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-4 leading-tight">
+                Bar & Restaurante<br>
+                <span class="text-neon text-glow">Gourmet</span>
+            </h1>
+
+            <p class="text-lg md:text-xl text-gray-300 mb-4 max-w-2xl mx-auto">
+                ¡De la mañana a la noche! Desayunos, hamburguesas, tapas, bocatas y los mejores cocktails de Valladolid.
+            </p>
+
+            <!-- Urgência CRO-fix -->
+            <div class="inline-flex items-center space-x-2 bg-green-900/50 border border-green-500/40 px-4 py-2 rounded-full mb-8">
+                <span class="relative flex h-3 w-3">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-3 w-3 bg-neon"></span>
+                </span>
+                <span class="text-sm text-green-300">Pedidos abiertos ahora · Entrega inmediata</span>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#menu"
+                   class="w-full sm:w-auto bg-neon hover:bg-neon-dark text-black px-8 py-4 rounded-full font-bold text-lg transition glow-neon flex items-center justify-center space-x-2">
+                    <i class="ph ph-fork-knife text-2xl" aria-hidden="true"></i>
+                    <span>Ver Carta Completa</span>
+                </a>
+
+                <a href="https://wa.me/34643512142?text=%C2%A1Hola!%20Quiero%20hacer%20una%20reserva%20en%20Taramundi"
+                   class="w-full sm:w-auto bg-white/10 hover:bg-white/20 border border-white/30 px-8 py-4 rounded-full font-bold text-lg transition flex items-center justify-center space-x-2">
+                    <i class="ph ph-whatsapp-logo text-2xl text-neon" aria-hidden="true"></i>
+                    <span>Reservar Mesa</span>
+                </a>
+            </div>
+
+            <!-- Info cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-16 max-w-4xl mx-auto">
+                <div class="bg-black/60 backdrop-blur-sm border border-neon/20 p-5 rounded-xl">
+                    <i class="ph ph-clock text-3xl text-neon mb-2" aria-hidden="true"></i>
+                    <h3 class="font-bold mb-1 text-sm">Horario</h3>
+                    <p class="text-xs text-gray-400">Mar-Vie: 08:00-00:00 · Sáb-Dom: 09:00-00:00</p>
+                    <p class="text-xs text-red-400 mt-1">Lunes: Cerrado</p>
+                </div>
+
+                <div class="bg-black/60 backdrop-blur-sm border border-neon/20 p-5 rounded-xl">
+                    <i class="ph ph-map-pin text-3xl text-neon mb-2" aria-hidden="true"></i>
+                    <h3 class="font-bold mb-1 text-sm">Ubicación</h3>
+                    <p class="text-xs text-gray-400">C. Embajadores, 14<br>47013 Valladolid</p>
+                </div>
+
+                <div class="bg-black/60 backdrop-blur-sm border border-neon/20 p-5 rounded-xl">
+                    <i class="ph ph-phone text-3xl text-neon mb-2" aria-hidden="true"></i>
+                    <h3 class="font-bold mb-1 text-sm">Contacto</h3>
+                    <p class="text-xs text-gray-400">+34 643 51 21 42<br>Respuesta inmediata</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menú Digital -->
+    <section id="menu" class="py-20 bg-gray-950">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold mb-3">
+                    Nuestra <span class="text-neon text-glow">Carta</span>
+                </h2>
+                <p class="text-gray-400 text-lg">Selecciona tus favoritos y pide directo por WhatsApp</p>
+            </div>
+
+            <!-- Filtros -->
+            <div class="flex flex-wrap justify-center gap-2 mb-12">
+                <template x-for="cat in categories" :key="cat.key">
+                    <button @click="filterCategory = cat.key"
+                            :class="filterCategory === cat.key
+                                ? 'bg-neon text-black'
+                                : 'bg-gray-900 hover:bg-gray-800 text-gray-300 border border-gray-700'"
+                            class="px-5 py-2 rounded-full font-semibold transition text-sm">
+                        <span x-text="cat.label"></span>
+                    </button>
+                </template>
+            </div>
+
+            <!-- Grid de Produtos -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                <template x-for="item in filteredMenu" :key="item.id">
+                    <div class="bg-gray-900 rounded-xl overflow-hidden card-hover border border-gray-800 hover:border-neon/30">
+                        <div class="p-5">
+                            <div class="flex items-start justify-between mb-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-lg leading-tight" x-text="item.name"></h3>
+                                    <p class="text-gray-500 text-xs mt-1" x-text="item.description"></p>
+                                </div>
+                                <span class="bg-neon/15 text-neon px-3 py-1 rounded-full font-bold text-sm ml-3 whitespace-nowrap"
+                                      x-text="'€' + item.price.toFixed(2)"></span>
+                            </div>
+
+                            <button @click="addToCart(item)"
+                                    class="w-full bg-gray-800 hover:bg-neon hover:text-black py-2.5 rounded-lg font-semibold transition text-sm flex items-center justify-center space-x-2 border border-gray-700 hover:border-neon">
+                                <i class="ph ph-plus-circle text-lg" aria-hidden="true"></i>
+                                <span>Añadir al Pedido</span>
+                            </button>
+                        </div>
+                    </div>
+                </template>
+            </div>
+
+            <!-- CTA Pedir após menu -->
+            <div class="text-center mt-12" x-show="cart.length > 0" x-transition>
+                <button @click="cartOpen = true"
+                        class="bg-neon hover:bg-neon-dark text-black px-10 py-4 rounded-full font-bold text-lg transition glow-neon inline-flex items-center space-x-3">
+                    <i class="ph-fill ph-shopping-cart text-2xl" aria-hidden="true"></i>
+                    <span>Ver Pedido (<span x-text="cart.length"></span> ítems) · €<span x-text="cartTotal.toFixed(2)"></span></span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nosotros -->
+    <section id="nosotros" class="py-20 bg-black">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <!-- Imagen del local -->
+                    <div class="mb-8 rounded-2xl overflow-hidden border border-neon/20 shadow-2xl">
+                        <img src="fachada.png" alt="Taramundi Bar - Fachada del local" class="w-full h-56 md:h-64 object-cover hover:scale-105 transition duration-500" loading="lazy" width="800" height="600">
+                    </div>
+
+                    <h2 class="text-4xl font-bold mb-6">
+                        ¿Por Qué <span class="text-neon text-glow">Taramundi?</span>
+                    </h2>
+
+                    <div class="space-y-5">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-neon/15 p-3 rounded-lg flex-shrink-0">
+                                <i class="ph-fill ph-star text-2xl text-neon" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg mb-1">205 Reseñas Positivas</h3>
+                                <p class="text-gray-400 text-sm">Nuestros clientes nos avalan con 4.5 estrellas en Google Maps.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-neon/15 p-3 rounded-lg flex-shrink-0">
+                                <i class="ph ph-sun text-2xl text-neon" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg mb-1">De la Mañana a la Noche</h3>
+                                <p class="text-gray-400 text-sm">Desayunos desde las 08:00, tapas, comidas y cenas hasta medianoche.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-neon/15 p-3 rounded-lg flex-shrink-0">
+                                <i class="ph ph-fire text-2xl text-neon" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg mb-1">Cocina Gourmet</h3>
+                                <p class="text-gray-400 text-sm">Hamburguesas premium, cachopos, sartenes y postres caseros.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-neon/15 p-3 rounded-lg flex-shrink-0">
+                                <i class="ph ph-whatsapp-logo text-2xl text-neon" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg mb-1">Pide Sin Intermediarios</h3>
+                                <p class="text-gray-400 text-sm">Directo por WhatsApp, sin comisiones ni apps de terceros.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <img src="header-banner.png" alt="Taramundi Bar Interior" class="rounded-2xl shadow-2xl border border-neon/20" loading="lazy" width="800" height="600">
+                    <div class="absolute -bottom-4 -right-4 bg-neon text-black px-6 py-3 rounded-xl font-bold shadow-lg glow-neon-sm hidden md:block">
+                        ⭐ 4.5/5 en Google
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto & Horarios -->
+    <section id="contacto" class="py-20 bg-gray-950">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold mb-3">
+                    <span class="text-neon text-glow">Visítanos</span> o Contáctanos
+                </h2>
+                <p class="text-gray-400 text-lg">Estamos a tu disposición</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Horarios -->
+                <div class="bg-gray-900 p-8 rounded-xl border border-neon/20">
+                    <h3 class="text-2xl font-bold mb-6 flex items-center space-x-3">
+                        <i class="ph ph-clock text-neon" aria-hidden="true"></i>
+                        <span>Horario de Atención</span>
+                    </h3>
+
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center py-2.5 border-b border-gray-800">
+                            <span class="text-gray-400">Domingo</span>
+                            <span class="font-semibold text-neon">09:00 - 00:00</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2.5 border-b border-gray-800">
+                            <span class="text-gray-400">Lunes</span>
+                            <span class="font-semibold text-red-400">Cerrado</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2.5 border-b border-gray-800">
+                            <span class="text-gray-400">Martes</span>
+                            <span class="font-semibold text-neon">08:00 - 00:00</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2.5 border-b border-gray-800">
+                            <span class="text-gray-400">Miércoles</span>
+                            <span class="font-semibold text-neon">08:00 - 00:00</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2.5 border-b border-gray-800">
+                            <span class="text-gray-400">Jueves</span>
+                            <span class="font-semibold text-neon">08:00 - 00:00</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2.5 border-b border-gray-800">
+                            <span class="text-gray-400">Viernes</span>
+                            <span class="font-semibold text-neon">08:00 - 00:00</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2.5">
+                            <span class="text-gray-400">Sábado</span>
+                            <span class="font-semibold text-neon">09:00 - 00:00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contacto -->
+                <div class="bg-gray-900 p-8 rounded-xl border border-neon/20">
+                    <h3 class="text-2xl font-bold mb-6 flex items-center space-x-3">
+                        <i class="ph ph-chats-circle text-neon" aria-hidden="true"></i>
+                        <span>Contacto Directo</span>
+                    </h3>
+
+                    <div class="space-y-4">
+                        <a href="https://wa.me/34643512142?text=%C2%A1Hola!%20Tengo%20una%20consulta%20sobre%20Taramundi"
+                           class="flex items-center space-x-4 p-4 bg-neon/10 hover:bg-neon/20 border border-neon/30 rounded-lg transition group">
+                            <i class="ph ph-whatsapp-logo text-3xl text-neon" aria-hidden="true"></i>
+                            <div>
+                                <p class="text-xs text-neon/70">WhatsApp</p>
+                                <p class="font-bold text-lg">+34 643 51 21 42</p>
+                            </div>
+                            <i class="ph ph-caret-right ml-auto text-2xl text-neon group-hover:translate-x-2 transition" aria-hidden="true"></i>
+                        </a>
+
+                        <a href="https://wa.me/34643512142?text=%C2%A1Hola!%20Prefiero%20hablar%20por%20tel%C3%A9fono%2C%20%C2%BFpueden%20llamarme%3F"
+                           class="flex items-center space-x-4 p-4 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-lg transition group">
+                            <i class="ph ph-phone text-3xl text-neon" aria-hidden="true"></i>
+                            <div>
+                                <p class="text-xs text-gray-500">Llamar</p>
+                                <p class="font-bold text-lg">643 51 21 42</p>
+                            </div>
+                            <i class="ph ph-caret-right ml-auto text-2xl text-gray-500 group-hover:translate-x-2 transition" aria-hidden="true"></i>
+                        </a>
+
+                        <a href="https://www.google.com/maps/place/Taramundi/@41.6387748,-4.7220116,17z"
+                           target="_blank"
+                           class="flex items-center space-x-4 p-4 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-lg transition group">
+                            <i class="ph ph-map-pin text-3xl text-neon" aria-hidden="true"></i>
+                            <div>
+                                <p class="text-xs text-gray-500">Cómo llegar</p>
+                                <p class="font-bold text-sm">C. Embajadores, 14 · 47013 Valladolid</p>
+                            </div>
+                            <i class="ph ph-caret-right ml-auto text-2xl text-gray-500 group-hover:translate-x-2 transition" aria-hidden="true"></i>
+                        </a>
+
+                        <a href="https://www.instagram.com/taramundi16/"
+                           target="_blank"
+                           class="flex items-center space-x-4 p-4 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-lg transition group">
+                            <i class="ph ph-instagram-logo text-3xl text-neon" aria-hidden="true"></i>
+                            <div>
+                                <p class="text-xs text-gray-500">Instagram</p>
+                                <p class="font-bold text-lg">@taramundi16</p>
+                            </div>
+                            <i class="ph ph-caret-right ml-auto text-2xl text-gray-500 group-hover:translate-x-2 transition" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black py-10 border-t border-neon/20">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center space-x-3">
+                    <img src="logo.png" alt="Taramundi Logo" class="h-10" width="40" height="40">
+                    <div>
+                        <p class="font-bold text-neon">Taramundi</p>
+                        <p class="text-xs text-gray-500">Bar & Restaurante · Valladolid</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <a href="https://www.instagram.com/taramundi16/" target="_blank" class="bg-gray-900 hover:bg-neon hover:text-black w-10 h-10 rounded-full flex items-center justify-center transition border border-gray-800 hover:border-neon" aria-label="Instagram de Taramundi">
+                        <i class="ph ph-instagram-logo text-xl" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://wa.me/34643512142" class="bg-gray-900 hover:bg-neon hover:text-black w-10 h-10 rounded-full flex items-center justify-center transition border border-gray-800 hover:border-neon" aria-label="WhatsApp de Taramundi">
+                        <i class="ph ph-whatsapp-logo text-xl" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.google.com/maps/place/Taramundi/@41.6387748,-4.7220116,17z" target="_blank" class="bg-gray-900 hover:bg-neon hover:text-black w-10 h-10 rounded-full flex items-center justify-center transition border border-gray-800 hover:border-neon" aria-label="Ubicación en Google Maps">
+                        <i class="ph ph-map-pin text-xl" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-900 mt-8 pt-6 text-center text-gray-600 text-xs">
+                <p>&copy; 2026 Taramundi Bar & Restaurante. Todos los derechos reservados.</p>
+                <p class="mt-1">Desarrollado por <span class="text-neon font-semibold">Leo Forge Factory</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Carrinho Flutuante (ESQUERDA - CRO fix) -->
+    <button @click="cartOpen = true"
+            x-show="cart.length > 0"
+            x-transition
+            class="cart-float bg-neon hover:bg-neon-dark text-black w-16 h-16 rounded-full flex items-center justify-center shadow-2xl glow-neon transition"
+            aria-label="Ver tu pedido">
+        <i class="ph-fill ph-shopping-cart text-2xl" aria-hidden="true"></i>
+        <span class="cart-badge" x-text="cart.length"></span>
+    </button>
+
+    <!-- WhatsApp Flutuante (DIREITA) -->
+    <a href="https://wa.me/34643512142?text=%C2%A1Hola!%20Quiero%20hacer%20un%20pedido%20en%20Taramundi"
+       class="fixed bottom-5 right-5 bg-neon hover:bg-neon-dark text-black w-16 h-16 rounded-full flex items-center justify-center shadow-2xl glow-neon-sm transition z-40"
+       aria-label="Pedir por WhatsApp">
+        <i class="ph-fill ph-whatsapp-logo text-3xl" aria-hidden="true"></i>
+    </a>
+
+    <!-- Modal do Carrinho -->
+    <div x-show="cartOpen"
+         x-transition
+         class="fixed inset-0 z-[999] flex items-end md:items-center justify-center p-4"
+         role="dialog"
+         aria-modal="true"
+         aria-label="Tu pedido">
+
+        <div @click="cartOpen = false" class="absolute inset-0 modal-backdrop"></div>
+
+        <div class="relative bg-gray-950 rounded-t-3xl md:rounded-3xl w-full max-w-2xl max-h-[90vh] overflow-y-auto border border-neon/30">
+
+            <!-- Header -->
+            <div class="sticky top-0 bg-black p-6 border-b border-neon/20 flex items-center justify-between">
+                <div>
+                    <h3 class="text-2xl font-bold flex items-center space-x-2">
+                        <i class="ph-fill ph-shopping-cart text-neon" aria-hidden="true"></i>
+                        <span>Tu Pedido</span>
+                    </h3>
+                    <p class="text-sm text-gray-500" x-text="`${cart.length} ${cart.length === 1 ? 'ítem' : 'ítems'}`"></p>
+                </div>
+                <button @click="cartOpen = false" class="text-gray-500 hover:text-white" aria-label="Cerrar pedido">
+                    <i class="ph ph-x text-3xl" aria-hidden="true"></i>
+                </button>
+            </div>
+
+            <!-- Lista -->
+            <div class="p-6 space-y-3">
+                <template x-for="(item, index) in cart" :key="index">
+                    <div class="flex items-center space-x-4 bg-gray-900 p-4 rounded-lg border border-gray-800">
+                        <div class="flex-1">
+                            <h4 class="font-bold" x-text="item.name"></h4>
+                            <p class="text-sm text-neon" x-text="`€${item.price.toFixed(2)}`"></p>
+                        </div>
+
+                        <button @click="removeFromCart(index)" class="text-red-500 hover:text-red-400" aria-label="Eliminar del carrito">
+                            <i class="ph ph-trash text-xl" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </template>
+
+                <div x-show="cart.length === 0" class="text-center py-12">
+                    <i class="ph ph-shopping-cart-simple text-6xl text-gray-700 mb-4" aria-hidden="true"></i>
+                    <p class="text-gray-500">Tu carrito está vacío</p>
+                </div>
+            </div>
+
+            <!-- Footer Total -->
+            <div x-show="cart.length > 0" class="sticky bottom-0 bg-black p-6 border-t border-neon/20">
+                <!-- Observaciones -->
+                <div class="mb-4">
+                    <label for="order-notes" class="text-xs text-gray-500 block mb-1">Observaciones (opcional)</label>
+                    <input type="text" id="order-notes" x-model="orderNotes" placeholder="Sin cebolla, extra salsa..."
+                           class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-2.5 text-sm text-white placeholder-gray-600 focus:border-neon focus:outline-none">
+                </div>
+
+                <div class="flex items-center justify-between mb-4">
+                    <span class="text-xl font-bold">Total:</span>
+                    <span class="text-2xl font-bold text-neon">€<span x-text="cartTotal.toFixed(2)"></span></span>
+                </div>
+
+                <button @click="sendOrderWhatsApp()"
+                        class="w-full bg-neon hover:bg-neon-dark text-black py-4 rounded-xl font-bold text-lg transition glow-neon flex items-center justify-center space-x-3">
+                    <i class="ph ph-whatsapp-logo text-2xl" aria-hidden="true"></i>
+                    <span>Enviar Pedido por WhatsApp</span>
+                </button>
+
+                <button @click="cart = []" type="button"
+                        class="w-full mt-3 text-red-400 hover:text-red-300 py-2 text-sm transition">
+                    Vaciar Carrito
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Alpine.js App -->
+    <script>
+        function taramundiApp() {
+            return {
+                mobileMenuOpen: false,
+                cartOpen: false,
+                filterCategory: 'todos',
+                cart: [],
+                orderNotes: '',
+
+                categories: [
+                    { key: 'todos', label: '🍽️ Todos' },
+                    { key: 'desayunos', label: '☕ Desayunos' },
+                    { key: 'hamburguesas', label: '🍔 Hamburguesas' },
+                    { key: 'raciones', label: '🍖 Raciones' },
+                    { key: 'bocatas', label: '🥖 Bocatas' },
+                    { key: 'sandwiches', label: '🥪 Sándwiches' },
+                    { key: 'tablas', label: '🥩 Tablas & Platos' },
+                    { key: 'sartenes', label: '🍳 Sartenes' },
+                    { key: 'postres', label: '🍰 Postres' },
+                ],
+
+                menuItems: [
+                    // DESAYUNOS
+                    { id: 1,  name: 'Tostada + Aceite', category: 'desayunos', price: 3.30, description: 'Tostada con aceite de oliva virgen' },
+                    { id: 2,  name: 'Tostada + Tomate y Jamón Serrano', category: 'desayunos', price: 3.50, description: 'Pan tostado con tomate natural y jamón' },
+                    { id: 3,  name: 'Tostada + Nutella', category: 'desayunos', price: 3.50, description: 'Tostada con crema de avellanas' },
+                    { id: 4,  name: 'Tostada + Tomate', category: 'desayunos', price: 4.50, description: 'Pan con tomate rallado' },
+                    { id: 5,  name: 'Tortilla de Patata', category: 'desayunos', price: 4.00, description: 'Tortilla española jugosa' },
+                    { id: 6,  name: 'Tortilla Francesa', category: 'desayunos', price: 4.00, description: 'Tortilla francesa clásica' },
+                    { id: 7,  name: 'Americano', category: 'desayunos', price: 4.70, description: 'Huevos, bacon, salchichas y tostada' },
+                    { id: 8,  name: 'Croissant Jamón y Queso', category: 'desayunos', price: 4.50, description: 'Croissant relleno caliente' },
+
+                    // HAMBURGUESAS
+                    { id: 10, name: 'Clásica Doble', category: 'hamburguesas', price: 9.50, description: 'Doble de carne de vacuno premium' },
+                    { id: 11, name: 'Krispy Clásica Doble', category: 'hamburguesas', price: 8.20, description: 'Pollo rebozado crujiente doble' },
+                    { id: 12, name: 'Suprema', category: 'hamburguesas', price: 8.20, description: 'Carne de vacuno premium, bacon y queso' },
+                    { id: 13, name: 'Suprema Doble', category: 'hamburguesas', price: 9.70, description: 'Doble de carne premium, huevo, bacon y queso' },
+                    { id: 14, name: 'Suprema Krispy Doble', category: 'hamburguesas', price: 8.70, description: 'Doble de pollo crujiente, huevo, bacon y queso' },
+                    { id: 15, name: 'Taramundi', category: 'hamburguesas', price: 10.70, description: 'Bacon y queso, pepillo, triple carne — ¡La estrella!' },
+
+                    // RACIONES
+                    { id: 20, name: 'Torrezno', category: 'raciones', price: 5.70, description: 'Torrezno crujiente de Soria' },
+                    { id: 21, name: 'Patatas 3 Salsas', category: 'raciones', price: 5.00, description: 'Patatas fritas con alioli, brava y kétchup' },
+                    { id: 22, name: 'Patatas Bravas', category: 'raciones', price: 5.50, description: 'Patatas con salsa brava picante' },
+                    { id: 23, name: 'Patatas de la Casa', category: 'raciones', price: 7.70, description: 'Bacon, queso y cebolla caramelizada' },
+                    { id: 24, name: 'Fingers', category: 'raciones', price: 9.00, description: 'Fingers de pollo crujientes' },
+                    { id: 25, name: 'Calamares', category: 'raciones', price: 11.00, description: 'Calamares a la romana' },
+
+                    // BOCATAS
+                    { id: 30, name: 'Bocata de Calamares', category: 'bocatas', price: 6.20, description: 'Bocadillo clásico de calamares' },
+                    { id: 31, name: 'Bocata de Rabas', category: 'bocatas', price: 7.20, description: 'Rabas rebozadas en pan crujiente' },
+                    { id: 32, name: 'Bocata de Ternera', category: 'bocatas', price: 8.20, description: 'Filete de ternera a la plancha' },
+                    { id: 33, name: 'Bocata de Panceta', category: 'bocatas', price: 6.70, description: 'Panceta a la plancha en bocadillo' },
+                    { id: 34, name: 'Bocata Bacon con Queso', category: 'bocatas', price: 6.70, description: 'Bacon crujiente con queso fundido' },
+                    { id: 35, name: 'Bocata de la Casa', category: 'bocatas', price: 8.20, description: 'Salchicha, tomate, cebolla, bacon, huevos, queso y pechuga a la plancha' },
+
+                    // SANDWICHES & PERRITOS
+                    { id: 40, name: 'Sándwich Mixto', category: 'sandwiches', price: 5.70, description: 'Jamón y queso clásico' },
+                    { id: 41, name: 'Sándwich Bacon', category: 'sandwiches', price: 6.20, description: 'Bacon crujiente con queso' },
+                    { id: 42, name: 'Sándwich Vegetal', category: 'sandwiches', price: 6.70, description: 'Verduras frescas y salsas' },
+                    { id: 43, name: 'Perrito Clásico', category: 'sandwiches', price: 6.20, description: 'Hot dog clásico con mostaza y kétchup' },
+                    { id: 44, name: 'Perrito Taramundi', category: 'sandwiches', price: 7.20, description: 'Perrito especial de la casa' },
+
+                    // TABLAS & PLATOS COMBINADOS
+                    { id: 50, name: 'Cachopo Individual', category: 'tablas', price: 20.00, description: 'Cachopo clásico para una persona' },
+                    { id: 51, name: 'Cachopo para Dos', category: 'tablas', price: 35.00, description: 'Cachopo grande para compartir' },
+                    { id: 52, name: 'Tabla Taramundi', category: 'tablas', price: 15.00, description: 'Selección de la casa para compartir' },
+                    { id: 53, name: 'Rabas', category: 'tablas', price: 9.00, description: 'Rabas rebozadas crujientes' },
+                    { id: 54, name: 'Lomo a la Plancha', category: 'tablas', price: 9.00, description: 'Lomo de cerdo a la plancha' },
+                    { id: 55, name: 'Pechuga a la Plancha', category: 'tablas', price: 9.00, description: 'Pechuga de pollo a la plancha' },
+                    { id: 56, name: 'Ternera a la Plancha', category: 'tablas', price: 9.00, description: 'Filete de ternera a la plancha' },
+
+                    // SARTENES
+                    { id: 60, name: 'Huevos Rotos con Jijas', category: 'sartenes', price: 9.00, description: 'Huevos rotos con jijas caseras' },
+                    { id: 61, name: 'Huevos Rotos con Lacón', category: 'sartenes', price: 9.00, description: 'Huevos rotos con lacón gallego' },
+                    { id: 62, name: 'Huevos Rotos con Morcilla', category: 'sartenes', price: 9.00, description: 'Huevos rotos con morcilla de Burgos' },
+                    { id: 63, name: 'Huevos Rotos con Torrezno', category: 'sartenes', price: 9.00, description: 'Huevos rotos con torrezno crujiente' },
+
+                    // POSTRES
+                    { id: 70, name: 'Tarta de Queso', category: 'postres', price: 4.00, description: 'Tarta de queso casera cremosa' },
+                    { id: 71, name: 'Tarta de Chocolate', category: 'postres', price: 4.00, description: 'Tarta de chocolate intenso' },
+                ],
+
+                get filteredMenu() {
+                    if (this.filterCategory === 'todos') return this.menuItems;
+                    return this.menuItems.filter(item => item.category === this.filterCategory);
+                },
+
+                get cartTotal() {
+                    return this.cart.reduce((sum, item) => sum + item.price, 0);
+                },
+
+                addToCart(item) {
+                    this.cart.push({...item});
+                    const btn = event.target.closest('button');
+                    const orig = btn.innerHTML;
+                    btn.innerHTML = '<i class="ph-fill ph-check-circle text-lg"></i> <span>¡Añadido!</span>';
+                    btn.classList.add('bg-neon', 'text-black', 'border-neon');
+                    setTimeout(() => {
+                        btn.innerHTML = orig;
+                        btn.classList.remove('bg-neon', 'text-black', 'border-neon');
+                    }, 800);
+                },
+
+                removeFromCart(index) {
+                    this.cart.splice(index, 1);
+                },
+
+                sendOrderWhatsApp() {
+                    if (this.cart.length === 0) return;
+
+                    // Agrupar itens iguais
+                    const grouped = {};
+                    this.cart.forEach(item => {
+                        if (grouped[item.id]) {
+                            grouped[item.id].qty++;
+                        } else {
+                            grouped[item.id] = { ...item, qty: 1 };
+                        }
+                    });
+
+                    let msg = '🍽️ *PEDIDO — TARAMUNDI BAR*\n';
+                    msg += '━━━━━━━━━━━━━━━━━━\n\n';
+
+                    Object.values(grouped).forEach((item, i) => {
+                        const subtotal = item.price * item.qty;
+                        if (item.qty > 1) {
+                            msg += `${i + 1}. ${item.name} x${item.qty}\n   €${item.price.toFixed(2)} c/u → €${subtotal.toFixed(2)}\n\n`;
+                        } else {
+                            msg += `${i + 1}. ${item.name}\n   €${item.price.toFixed(2)}\n\n`;
+                        }
+                    });
+
+                    msg += '━━━━━━━━━━━━━━━━━━\n';
+                    msg += `💰 *TOTAL: €${this.cartTotal.toFixed(2)}*\n\n`;
+
+                    if (this.orderNotes.trim()) {
+                        msg += `📝 *Notas:* ${this.orderNotes}\n\n`;
+                    }
+
+                    msg += '📍 ¿Para comer aquí o para llevar?\n';
+                    msg += '⏰ ¿A qué hora lo necesitan?\n';
+
+                    window.open(`https://wa.me/34643512142?text=${encodeURIComponent(msg)}`, '_blank');
+
+                    setTimeout(() => {
+                        this.cart = [];
+                        this.orderNotes = '';
+                        this.cartOpen = false;
+                    }, 1000);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

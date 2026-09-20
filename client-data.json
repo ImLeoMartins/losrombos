@@ -1,0 +1,23 @@
+{
+  "nome": "Taramundi",
+  "categoria": "Bar",
+  "endereco": "C. Embajadores, 14, 47013 Valladolid, Espanha",
+  "nota": "4.5",
+  "total_avaliacoes": "205",
+  "telefone": "+34 643 51 21 42",
+  "maps_url": "https://www.google.com/maps/place/Taramundi/@41.6387748,-4.7220116,17z/data=!3m1!4b1!4m6!3m5!1s0xd471348060e3fd9:0xd9dfb7357af9c9b1!8m2!3d41.6387748!4d-4.7220116!16s%2Fg%2F11qmr0dzxt",
+  "fotos": [
+    "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkVUpQyLBPSUOaNW-NGMy_Xj19W5Gl32vfjRu_K1fLFePW7Gv7Nwrwg-FYlGQY0609hR6pjQ1olEpqrvFcCTCJv38qITnHznmM6SBkTOx6pwx-cSBGVdUMU8TKN474uRqIddiP1=w408-h306-k-no"
+  ],
+  "horarios": [
+    {"dia": "Domingo", "horario": "09:00-00:00"},
+    {"dia": "Segunda-feira", "horario": "Fechado"},
+    {"dia": "Terça-feira", "horario": "08:00-00:00"},
+    {"dia": "Quarta-feira", "horario": "08:00-00:00"},
+    {"dia": "Quinta-feira", "horario": "08:00-00:00"},
+    {"dia": "Sexta-feira", "horario": "08:00-00:00"},
+    {"dia": "Sábado", "horario": "09:00-00:00"}
+  ],
+  "instagram": "",
+  "website": ""
+}
