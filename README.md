@@ -14,8 +14,7 @@
 Landing page desenvolvida para **Los Rombos Bar & Restaurante** (Valladolid, Espanha) com foco em conversão direta via WhatsApp, eliminando intermediários de delivery.
 
 **Cliente:** Los Rombos Bar  
-**Localização:** C. Embajadores, 14 - 47013 Valladolid  
-**WhatsApp:** +34 643 51 21 42
+**Localização:** C. Transición, 8 - 47013 Valladolid  
 
 ---
 
@@ -93,7 +92,10 @@ Desenvolvedores podem usar a estrutura como inspiração, desde que respeitem o 
 © 2026 Leo Forge Factory
 
 **Cliente:** Los Rombos Bar (uso autorizado)  
-**Desenvolvedor:** Leo Martins (@ImLeoMartins)
+**Desenvolvedores:** 
+Leo-Forge (@ImLeoMartins) | 
+VN-Studio (@SrViniih)
+
 
 ---
 
