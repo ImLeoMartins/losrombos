@@ -248,10 +248,7 @@
         /* ── Mobile: hamburger + dropdown ── */
         .hero-mobile-btn {
             display: none;
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            z-index: 30;
+            z-index: 50;
             backdrop-filter: blur(10px);
             background: rgba(40, 20, 5, 0.15);
             border: 1px solid rgba(212, 113, 0, 0.2);
@@ -259,12 +256,10 @@
             border-radius: 4px;
             cursor: pointer;
             color: #D47100;
+            transition: top 0.3s, bottom 0.3s;
         }
         .hero-mobile-dropdown {
-            position: absolute;
-            top: 64px;
-            right: 20px;
-            z-index: 30;
+            z-index: 50;
             backdrop-filter: blur(12px);
             background: rgba(20, 10, 2, 0.85);
             border: 1px solid rgba(212, 113, 0, 0.2);
@@ -550,7 +545,7 @@
     </style>
 </head>
 
-<body class="bg-black text-white overflow-x-hidden" x-data="taramundiApp()">
+<body class="bg-black text-white overflow-x-hidden" x-data="taramundiApp()" @scroll.window="isPastHero = (window.scrollY > (document.getElementById('menu')?.offsetTop - 80))">
 
     <main>
     <!-- Hero Section -->
@@ -575,7 +570,8 @@
         <!-- Hamburger mobile: aparece só em telas < 560px -->
         <div x-data="{ mobileNav: false }">
             <button
-                class="hero-mobile-btn"
+                class="hero-mobile-btn fixed right-5"
+                :class="isPastHero ? 'bottom-[115px]' : 'top-5'"
                 @click="mobileNav = !mobileNav"
                 :aria-expanded="mobileNav"
                 aria-label="Abrir menú">
@@ -585,14 +581,15 @@
             </button>
 
             <div
-                class="hero-mobile-dropdown"
+                class="hero-mobile-dropdown fixed right-5 origin-right"
+                :class="isPastHero ? 'bottom-[165px]' : 'top-[64px]'"
                 x-show="mobileNav"
                 x-transition:enter="transition ease-out duration-200"
-                x-transition:enter-start="opacity-0 -translate-y-2"
-                x-transition:enter-end="opacity-100 translate-y-0"
+                x-transition:enter-start="opacity-0 scale-95"
+                x-transition:enter-end="opacity-100 scale-100"
                 x-transition:leave="transition ease-in duration-150"
-                x-transition:leave-start="opacity-100 translate-y-0"
-                x-transition:leave-end="opacity-0 -translate-y-2"
+                x-transition:leave-start="opacity-100 scale-100"
+                x-transition:leave-end="opacity-0 scale-95"
                 @click.away="mobileNav = false">
                 <a href="#inicio" @click="mobileNav = false">Inicio</a>
                 <a href="#menu" @click="mobileNav = false">Menú</a>
@@ -688,19 +685,59 @@
                 <p class="text-gray-400 text-lg">Selecciona tus favoritos y pide directo por WhatsApp</p>
             </div>
 
-            <!-- Filtros -->
-            <div class="sticky top-0 z-40 bg-gray-950/95 backdrop-blur-sm py-4 -mx-4 px-4 mb-8">
-                <div class="flex overflow-x-auto hide-scrollbar gap-2 max-w-7xl mx-auto" style="scroll-snap-type: x mandatory;">
-                    <template x-for="cat in categories" :key="cat.key">
-                        <button @click="filterCategory = cat.key"
-                                :class="filterCategory === cat.key
-                                    ? 'bg-neon text-black'
-                                    : 'bg-gray-900 hover:bg-gray-800 text-gray-300 border border-gray-700'"
-                                class="btn-poly px-7 py-2 font-semibold transition text-sm flex-shrink-0 whitespace-nowrap"
-                                style="scroll-snap-align: start;">
-                            <span x-text="cat.label"></span>
-                        </button>
-                    </template>
+            <!-- Filtros com Setas -->
+            <div class="sticky top-0 z-40 bg-gray-950/95 backdrop-blur-sm py-4 -mx-4 px-4 mb-8"
+                 x-data="{ 
+                     canScrollLeft: false, 
+                     canScrollRight: true,
+                     checkScroll() {
+                         const el = this.$refs.scrollContainer;
+                         this.canScrollLeft = el.scrollLeft > 0;
+                         // Usando uma margem de 2px para evitar problemas de arredondamento
+                         this.canScrollRight = el.scrollLeft < (el.scrollWidth - el.clientWidth - 2);
+                     },
+                     init() {
+                         setTimeout(() => this.checkScroll(), 200);
+                         window.addEventListener('resize', () => this.checkScroll());
+                     }
+                 }">
+                 
+                <div class="relative max-w-7xl mx-auto group">
+                    <!-- Seta Esquerda (Desktop) -->
+                    <button @click="$refs.scrollContainer.scrollBy({left: -250, behavior: 'smooth'})" 
+                            x-show="canScrollLeft" 
+                            x-transition.opacity
+                            class="absolute left-0 top-0 z-10 h-full px-1 bg-gradient-to-r from-gray-950 via-gray-950/80 to-transparent flex items-center text-neon hover:text-white transition hidden md:flex"
+                            aria-label="Rolar para esquerda">
+                        <i class="ph-bold ph-caret-left text-2xl drop-shadow-md" aria-hidden="true"></i>
+                    </button>
+
+                    <!-- Container de scroll -->
+                    <div class="flex overflow-x-auto hide-scrollbar gap-2 w-full px-4" 
+                         x-ref="scrollContainer" 
+                         @scroll.passive="checkScroll" 
+                         style="scroll-snap-type: x mandatory;">
+                        
+                        <template x-for="cat in categories" :key="cat.key">
+                            <button @click="filterCategory = cat.key"
+                                    :class="filterCategory === cat.key
+                                        ? 'bg-neon text-black'
+                                        : 'bg-gray-900 hover:bg-gray-800 text-gray-300 border border-gray-700'"
+                                    class="btn-poly px-7 py-2 font-semibold transition text-sm flex-shrink-0 whitespace-nowrap"
+                                    style="scroll-snap-align: start;">
+                                <span x-text="cat.label"></span>
+                            </button>
+                        </template>
+                    </div>
+
+                    <!-- Seta Direita (Desktop) -->
+                    <button @click="$refs.scrollContainer.scrollBy({left: 250, behavior: 'smooth'})" 
+                            x-show="canScrollRight" 
+                            x-transition.opacity
+                            class="absolute right-0 top-0 z-10 h-full px-1 bg-gradient-to-l from-gray-950 via-gray-950/80 to-transparent flex items-center text-neon hover:text-white transition hidden md:flex"
+                            aria-label="Rolar para direita">
+                        <i class="ph-bold ph-caret-right text-2xl drop-shadow-md" aria-hidden="true"></i>
+                    </button>
                 </div>
             </div>
 
@@ -1175,6 +1212,7 @@
         function taramundiApp() {
             return {
                 mobileMenuOpen: false,
+                isPastHero: false,
                 cartOpen: false,
                 reservationOpen: false,
                 filterCategory: 'todos',
