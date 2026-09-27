@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Taramundi Bar & Restaurante Gourmet - Valladolid. Hamburguesas, tapas, bocatas y más. ⭐ 4.5 (205 reseñas). ¡Pide online por WhatsApp!">
-    <meta name="keywords" content="bar valladolid, restaurante valladolid, hamburguesas valladolid, tapas, bocatas, pedido online whatsapp, taramundi">
-    <title>Taramundi Bar & Restaurante | Valladolid - Pedidos Online</title>
+    <meta name="description" content="Los Rombos Bar & Restaurante Gourmet - Valladolid. Hamburguesas, tapas, bocatas y más. ⭐ 4.5 (205 reseñas). ¡Pide online por WhatsApp!">
+    <meta name="keywords" content="bar valladolid, restaurante valladolid, hamburguesas valladolid, tapas, bocatas, pedido online whatsapp, los rambos">
+    <meta name="author" content="Los Rombos">
+    <title>Los Rombos Bar & Restaurante | Valladolid - Pedidos Online</title>
     <link rel="icon" type="image/png" href="logo.png">
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -14,23 +15,24 @@
             theme: {
                 extend: {
                     colors: {
-                        neon: '#39FF14',
-                        'neon-dark': '#2DD911',
-                        'neon-glow': '#32E512',
+                        neon: '#D47100',
+                        'neon-dark': '#D36702',
+                        'neon-glow': '#FFA365',
+                        'whatsapp-green': '#25D366',
+                        'whatsapp-green-dark': '#128C7E',
+                        'whatsapp-green-light': '#DCF8C6',
                     }
                 }
             }
         }
     </script>
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
-
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>    <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Taramundi Bar & Restaurante Gourmet | Valladolid">
+    <meta property="og:title" content="Los Rombos Bar & Restaurante Gourmet | Valladolid">
     <meta property="og:description" content="Hamburguesas, tapas, bocatas y los mejores cocktails. ⭐ 4.5 (205 reseñas). ¡Pide online por WhatsApp!">
     <meta property="og:image" content="fachada.png">
     <meta property="og:type" content="restaurant">
@@ -41,13 +43,14 @@
     {
       "@context": "https://schema.org",
       "@type": "Restaurant",
-      "name": "Taramundi Bar & Restaurante",
+      "name": "Los Rombos Bar & Restaurante",
       "image": [
         "fachada.png",
         "header-banner.png"
       ],
-      "url": "https://taramundi-valladolid.com",
-      "@id": "https://taramundi-valladolid.com",
+      "description": "Hamburguesas, tapas, bocatas y los mejores cocktails. ⭐ 4.5 (205 reseñas). ¡Pide online por WhatsApp!",
+      "url": "https://los-rombos-valladolid.com",
+      "@id": "https://los-rombos-valladolid.com",
       "telephone": "+34643512142",
       "priceRange": "€€",
       "address": {
@@ -85,7 +88,7 @@
         "bestRating": "5",
         "worstRating": "1"
       },
-      "menu": "https://taramundi-valladolid.com#menu",
+      "menu": "https://los-rombos-valladolid.com#menu",
       "hasMenu": {
         "@type": "Menu",
         "hasMenuSection": [
@@ -120,7 +123,7 @@
             "hasMenuItem": [
               {
                 "@type": "MenuItem",
-                "name": "Hamburguesa Taramundi",
+                "name": "Hamburguesa Los Rombos",
                 "description": "Bacon y queso, pepillo, triple carne — ¡La estrella!",
                 "offers": {
                   "@type": "Offer",
@@ -166,7 +169,7 @@
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "name": "Taramundi Bar",
+      "name": "Los Rombos Bar",
       "image": "fachada.png",
       "telephone": "+34643512142",
       "address": {
@@ -188,6 +191,114 @@
 
     <style>
 
+        /* ── Botões com ponta poligonal esq/dir ── */
+        .btn-poly {
+            clip-path: polygon(14px 0%, calc(100% - 14px) 0%, 100% 50%, calc(100% - 14px) 100%, 14px 100%, 0% 50%);
+            border-radius: 3px;
+            transition: all 0.25s ease;
+        }
+        /* Remove border-radius padrão de botões que usam clip-path */
+        .btn-poly.rounded-full { border-radius: 3px !important; }
+
+        /* ── Botão "Reservar Mesa" — estilo card ── */
+        .btn-reserva-card {
+            backdrop-filter: blur(8px);
+            background: rgba(40, 20, 5, 0.15) !important;
+            border: 1px solid rgba(212, 113, 0, 0.2) !important;
+            color: #fff;
+            transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.25s ease;
+        }
+        .btn-reserva-card:hover {
+            background: rgba(40, 20, 5, 0.32) !important;
+            box-shadow: 0 8px 28px rgba(212, 113, 0, 0.18);
+            transform: translateY(-2px);
+        }
+
+        /* ── Hero navlinks flutuando ── */
+        .hero-nav {
+            position: absolute;
+            top: 28px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            backdrop-filter: blur(10px);
+            background: rgba(40, 20, 5, 0.15);
+            border: 1px solid rgba(212, 113, 0, 0.2);
+            padding: 8px 18px;
+            border-radius: 4px;
+            z-index: 20;
+        }
+        .hero-nav a {
+            color: #d4d4d4;
+            font-size: 0.875rem;
+            font-weight: 600;
+            padding: 4px 12px;
+            transition: color 0.2s ease;
+            white-space: nowrap;
+        }
+        .hero-nav a:hover { color: #D47100; }
+        .hero-nav-sep {
+            width: 1px;
+            height: 16px;
+            background: rgba(212,113,0,0.25);
+        }
+
+        /* ── Mobile: hamburger + dropdown ── */
+        .hero-mobile-btn {
+            display: none;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 30;
+            backdrop-filter: blur(10px);
+            background: rgba(40, 20, 5, 0.15);
+            border: 1px solid rgba(212, 113, 0, 0.2);
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            color: #D47100;
+        }
+        .hero-mobile-dropdown {
+            position: absolute;
+            top: 64px;
+            right: 20px;
+            z-index: 30;
+            backdrop-filter: blur(12px);
+            background: rgba(20, 10, 2, 0.85);
+            border: 1px solid rgba(212, 113, 0, 0.2);
+            border-radius: 6px;
+            overflow: hidden;
+            min-width: 160px;
+        }
+        .hero-mobile-dropdown a {
+            display: block;
+            padding: 12px 20px;
+            color: #d4d4d4;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: color 0.2s, background 0.2s;
+            border-bottom: 1px solid rgba(212,113,0,0.1);
+        }
+        .hero-mobile-dropdown a:last-child { border-bottom: none; }
+        .hero-mobile-dropdown a:hover {
+            color: #D47100;
+            background: rgba(212,113,0,0.08);
+        }
+
+        /* Responsividade da nav */
+        @media (max-width: 559px) {
+            /* Tela muito pequena: esconde barra horizontal, mostra hamburger */
+            .hero-nav { display: none; }
+            .hero-mobile-btn { display: flex; align-items: center; gap: 6px; }
+        }
+        @media (min-width: 560px) {
+            /* Tela média/grande: barra horizontal visível, hamburger oculto */
+            .hero-mobile-btn { display: none; }
+            .hero-mobile-dropdown { display: none !important; }
+        }
+
         * { font-family: 'Poppins', sans-serif; }
 
         .hero-gradient {
@@ -195,15 +306,15 @@
         }
 
         .glow-neon {
-            box-shadow: 0 0 25px rgba(57, 255, 20, 0.4), 0 0 50px rgba(57, 255, 20, 0.15);
+            box-shadow: 0 0 25px rgba(197, 118, 0, 0.856), 0 0 50px rgba(0, 0, 0, 0.15);
         }
 
         .glow-neon-sm {
-            box-shadow: 0 0 15px rgba(57, 255, 20, 0.3);
+            box-shadow: 0 0 15px rgba(197, 118, 0, 0.856);
         }
 
         .text-glow {
-            text-shadow: 0 0 20px rgba(57, 255, 20, 0.5);
+            text-shadow: 0 0 20px rgba(197, 118, 0, 0.856);
         }
 
         .fade-in {
@@ -246,7 +357,113 @@
 
         .card-hover:hover {
             transform: translateY(-6px);
-            box-shadow: 0 15px 40px rgba(57, 255, 20, 0.1);
+            box-shadow: 0 15px 40px rgba(114, 78, 0, 0.1);
+        }
+
+        .food-image-placeholder {
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .food-image-placeholder i {
+            font-size: 48px;
+            color: #444;
+        }
+
+        .food-badge {
+            transition: all 0.2s ease;
+        }
+
+        .food-badge:hover {
+            transform: scale(1.1);
+        }
+
+        .whatsapp-shadow {
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp-shadow-hover:hover {
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-diamond {
+            transform: rotate(45deg);
+            width: 64px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 18px;
+        }
+
+        .whatsapp-diamond i {
+            transform: rotate(-45deg);
+        }
+
+        /* ── Hero Section ── */
+        .hero-section {
+            position: relative;
+        }
+
+        /* ── Info Cards: hover expand no desktop ── */
+        .hero-info-cards-wrapper {
+            display: none;
+        }
+
+        @media (min-width: 1024px) {
+            .hero-info-cards-wrapper {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .hero-info-card {
+                transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                            box-shadow 0.35s ease,
+                            background 0.35s ease;
+                cursor: default;
+            }
+
+            .hero-info-card:hover {
+                transform: scaleX(1.08) translateX(-4%);
+                box-shadow: 0 8px 32px rgba(212, 113, 0, 0.18), 0 2px 8px rgba(0,0,0,0.4);
+                background: rgba(40, 20, 5, 0.28) !important;
+            }
+        }
+
+        /* ── Logo à direita — grande, com glow preto ── */
+        .hero-logo-container {
+            display: none;
+        }
+
+        @media (min-width: 1024px) {
+            .hero-logo-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .hero-logo-container img {
+                width: 100%;
+                max-width: 340px;
+                height: auto;
+                object-fit: contain;
+                filter:
+                    drop-shadow(0 0 80px rgba(0, 0, 0, 1))
+                    drop-shadow(0 0 40px rgba(0, 0, 0, 0.95))
+                    drop-shadow(0 0 20px rgba(0, 0, 0, 0.9))
+                    drop-shadow(0 4px 24px rgba(0, 0, 0, 0.85));
+            }
+        }
+
+        @media (max-width: 1023px) {
+            .hero-logo-container img {
+                max-width: 200px;
+                margin: 20px auto;
+                display: block;
+            }
         }
 
         .modal-backdrop {
@@ -257,123 +474,198 @@
         /* Scrollbar personalizada */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #0a0a0a; }
-        ::-webkit-scrollbar-thumb { background: #39FF14; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb { background: #d49100; border-radius: 4px; }
+
+        /* Reserva de Mesas */
+        .table-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+            gap: 8px;
+            margin: 12px 0;
+        }
+
+        .table-card {
+            padding: 12px;
+            border: 2px solid;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .table-card.available {
+            border-color: #D47100;
+            background: rgba(212, 113, 0, 0.1);
+            color: #D47100;
+        }
+
+        .table-card.available:hover {
+            background: rgba(212, 113, 0, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .table-card.selected {
+            background: #D47100;
+            color: black;
+            border-color: #D36702;
+            box-shadow: 0 4px 12px rgba(212, 113, 0, 0.3);
+        }
+
+        .table-card.unavailable {
+            border-color: #666;
+            background: rgba(100, 100, 100, 0.1);
+            color: #999;
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+
+        .table-capacity {
+            font-size: 11px;
+            opacity: 0.8;
+            margin-top: 4px;
+        }
+
+        .reservation-form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        @media (max-width: 640px) {
+            .reservation-form-row {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 
 <body class="bg-black text-white overflow-x-hidden" x-data="taramundiApp()">
 
-    <!-- Navbar Fixa -->
-    <nav class="fixed top-0 left-0 right-0 bg-black/95 backdrop-blur-sm border-b border-neon/30 z-50" aria-label="Navegación principal">
-        <div class="container mx-auto px-4 py-3">
-            <div class="flex items-center justify-between">
-                <a href="#" class="flex items-center space-x-3">
-                    <img src="logo.png" alt="Taramundi Bar Logo" class="h-10 w-auto" width="40" height="40">
-                    <span class="text-xl font-bold text-neon hidden sm:block">Taramundi</span>
-                </a>
-
-                <div class="hidden md:flex items-center space-x-6">
-                    <a href="#inicio" class="text-gray-300 hover:text-neon transition">Inicio</a>
-                    <a href="#menu" class="text-gray-300 hover:text-neon transition">Menú</a>
-                    <a href="#nosotros" class="text-gray-300 hover:text-neon transition">Nosotros</a>
-                    <a href="#contacto" class="text-gray-300 hover:text-neon transition">Contacto</a>
-                </div>
-
-                <a href="https://wa.me/34643512142?text=%C2%A1Hola!%20Quiero%20hacer%20una%20reserva%20en%20Taramundi"
-                   class="hidden md:flex items-center space-x-2 bg-neon hover:bg-neon-dark text-black px-6 py-2.5 rounded-full font-bold transition glow-neon-sm">
-                    <i class="ph ph-whatsapp-logo text-xl" aria-hidden="true"></i>
-                    <span>Reservar Mesa</span>
-                </a>
-
-                <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-neon" aria-label="Abrir menú" :aria-expanded="mobileMenuOpen">
-                    <i class="ph ph-list text-3xl" x-show="!mobileMenuOpen" aria-hidden="true"></i>
-                    <i class="ph ph-x text-3xl" x-show="mobileMenuOpen" aria-hidden="true"></i>
-                </button>
-            </div>
-        </div>
-
-        <!-- Menu Mobile -->
-        <div x-show="mobileMenuOpen" x-transition class="md:hidden bg-gray-950 border-t border-neon/20">
-            <div class="container mx-auto px-4 py-4 space-y-3">
-                <a href="#inicio" @click="mobileMenuOpen = false" class="block text-gray-300 hover:text-neon py-2 border-b border-gray-800">Inicio</a>
-                <a href="#menu" @click="mobileMenuOpen = false" class="block text-gray-300 hover:text-neon py-2 border-b border-gray-800">Menú</a>
-                <a href="#nosotros" @click="mobileMenuOpen = false" class="block text-gray-300 hover:text-neon py-2 border-b border-gray-800">Nosotros</a>
-                <a href="#contacto" @click="mobileMenuOpen = false" class="block text-gray-300 hover:text-neon py-2 border-b border-gray-800">Contacto</a>
-                <a href="https://wa.me/34643512142?text=%C2%A1Hola!%20Quiero%20hacer%20una%20reserva%20en%20Taramundi"
-                   class="flex items-center justify-center space-x-2 bg-neon text-black px-6 py-3 rounded-full font-bold mt-3">
-                    <i class="ph ph-whatsapp-logo text-xl" aria-hidden="true"></i>
-                    <span>Reservar Mesa</span>
-                </a>
-            </div>
-        </div>
-    </nav>
-
     <main>
     <!-- Hero Section -->
-    <section id="inicio" class="relative min-h-screen flex items-center justify-center pt-24 md:pt-16">
+    <section id="inicio" class="hero-section relative min-h-screen flex items-center justify-center">
+        <!-- Background fachada -->
         <div class="absolute inset-0 z-0">
-            <img src="fachada.png" alt="Taramundi Bar - Fachada" class="w-full h-full object-cover" width="1920" height="1080">
+            <img src="fachada.png" alt="Los Rombos Bar - Fachada" class="w-full h-full object-cover" width="1920" height="1080">
             <div class="absolute inset-0 hero-gradient"></div>
         </div>
 
-        <div class="relative z-10 container mx-auto px-4 text-center fade-in">
-            <div class="inline-flex items-center space-x-2 bg-neon/15 border border-neon/40 px-4 py-2 rounded-full mb-6">
-                <i class="ph-fill ph-star text-yellow-400" aria-hidden="true"></i>
-                <span class="text-sm font-semibold text-neon">4.5 ⭐ · 205 Reseñas en Google</span>
+        <!-- Navlinks flutuando no topo do hero — desktop e tablets -->
+        <nav class="hero-nav" aria-label="Navegación principal">
+            <a href="#inicio">Inicio</a>
+            <div class="hero-nav-sep"></div>
+            <a href="#menu">Menú</a>
+            <div class="hero-nav-sep"></div>
+            <a href="#nosotros">Nosotros</a>
+            <div class="hero-nav-sep"></div>
+            <a href="#contacto">Contacto</a>
+        </nav>
+
+        <!-- Hamburger mobile: aparece só em telas < 560px -->
+        <div x-data="{ mobileNav: false }">
+            <button
+                class="hero-mobile-btn"
+                @click="mobileNav = !mobileNav"
+                :aria-expanded="mobileNav"
+                aria-label="Abrir menú">
+                <i class="ph ph-list text-2xl" x-show="!mobileNav" aria-hidden="true"></i>
+                <i class="ph ph-x text-2xl" x-show="mobileNav" aria-hidden="true"></i>
+                <span class="text-xs font-semibold">Menu</span>
+            </button>
+
+            <div
+                class="hero-mobile-dropdown"
+                x-show="mobileNav"
+                x-transition:enter="transition ease-out duration-200"
+                x-transition:enter-start="opacity-0 -translate-y-2"
+                x-transition:enter-end="opacity-100 translate-y-0"
+                x-transition:leave="transition ease-in duration-150"
+                x-transition:leave-start="opacity-100 translate-y-0"
+                x-transition:leave-end="opacity-0 -translate-y-2"
+                @click.away="mobileNav = false">
+                <a href="#inicio" @click="mobileNav = false">Inicio</a>
+                <a href="#menu" @click="mobileNav = false">Menú</a>
+                <a href="#nosotros" @click="mobileNav = false">Nosotros</a>
+                <a href="#contacto" @click="mobileNav = false">Contacto</a>
             </div>
+        </div>
 
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-4 leading-tight">
-                Bar & Restaurante<br>
-                <span class="text-neon text-glow">Gourmet</span>
-            </h1>
+        <div class="relative z-10 w-full container mx-auto px-4">
+            <!-- Layout Grid: Texto | Cards | Logo -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
 
-            <p class="text-lg md:text-xl text-gray-300 mb-4 max-w-2xl mx-auto">
-                ¡De la mañana a la noche! Desayunos, hamburguesas, tapas, bocatas y los mejores cocktails de Valladolid.
-            </p>
+                <!-- ESQUERDA: Conteúdo principal (5 cols) -->
+                <div class="lg:col-span-5 text-left fade-in">
+                    <div class="inline-flex items-center space-x-2 bg-neon/15 border border-neon/40 px-4 py-2 rounded-full mb-6">
+                        <i class="ph-fill ph-star text-yellow-400" aria-hidden="true"></i>
+                        <span class="text-sm font-semibold text-neon">4.5 ⭐ · 205 Reseñas en Google</span>
+                    </div>
 
-            <!-- Urgência CRO-fix -->
-            <div class="inline-flex items-center space-x-2 bg-green-900/50 border border-green-500/40 px-4 py-2 rounded-full mb-8">
-                <span class="relative flex h-3 w-3">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-3 w-3 bg-neon"></span>
-                </span>
-                <span class="text-sm text-green-300">Pedidos abiertos ahora · Entrega inmediata</span>
-            </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight">
+                        Bar & Restaurante<br>
+                        <span class="text-neon text-glow">Gourmet</span>
+                    </h1>
 
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#menu"
-                   class="w-full sm:w-auto bg-neon hover:bg-neon-dark text-black px-8 py-4 rounded-full font-bold text-lg transition glow-neon flex items-center justify-center space-x-2">
-                    <i class="ph ph-fork-knife text-2xl" aria-hidden="true"></i>
-                    <span>Ver Carta Completa</span>
-                </a>
+                    <p class="text-lg md:text-xl text-gray-300 mb-4 max-w-lg">
+                        ¡De la mañana a la noche! Desayunos, hamburguesas, tapas, bocatas y los mejores cocktails de Valladolid.
+                    </p>
 
-                <a href="https://wa.me/34643512142?text=%C2%A1Hola!%20Quiero%20hacer%20una%20reserva%20en%20Taramundi"
-                   class="w-full sm:w-auto bg-white/10 hover:bg-white/20 border border-white/30 px-8 py-4 rounded-full font-bold text-lg transition flex items-center justify-center space-x-2">
-                    <i class="ph ph-whatsapp-logo text-2xl text-neon" aria-hidden="true"></i>
-                    <span>Reservar Mesa</span>
-                </a>
-            </div>
+                    <!-- Urgência -->
+                    <div class="inline-flex items-center space-x-2 bg-green-900/50 border border-green-500/40 px-4 py-2 rounded-full mb-8">
+                        <span class="relative flex h-3 w-3">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-3 w-3 bg-neon"></span>
+                        </span>
+                        <span class="text-sm text-green-300">Pedidos abiertos ahora · Entrega inmediata</span>
+                    </div>
 
-            <!-- Info cards -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-16 max-w-4xl mx-auto">
-                <div class="bg-black/60 backdrop-blur-sm border border-neon/20 p-5 rounded-xl">
-                    <i class="ph ph-clock text-3xl text-neon mb-2" aria-hidden="true"></i>
-                    <h3 class="font-bold mb-1 text-sm">Horario</h3>
-                    <p class="text-xs text-gray-400">Mar-Vie: 08:00-00:00 · Sáb-Dom: 09:00-00:00</p>
-                    <p class="text-xs text-red-400 mt-1">Lunes: Cerrado</p>
+                    <div class="flex flex-col sm:flex-row items-start gap-4">
+                        <!-- Ver Carta: botão neon com pontas poligonais -->
+                        <a href="#menu"
+                           class="btn-poly w-full sm:w-auto bg-neon hover:bg-neon-dark text-black px-10 py-4 font-bold text-lg glow-neon flex items-center justify-center space-x-2">
+                            <i class="ph ph-fork-knife text-2xl" aria-hidden="true"></i>
+                            <span>Ver Carta Completa</span>
+                        </a>
+                        <!-- Reservar Mesa: card style + pontas poligonais -->
+                        <button @click="reservationOpen = true"
+                           class="btn-poly btn-reserva-card w-full sm:w-auto px-10 py-4 font-bold text-lg flex items-center justify-center space-x-2">
+                            <i class="ph ph-calendar-check text-2xl" aria-hidden="true"></i>
+                            <span>Reservar Mesa</span>
+                        </button>
+                    </div>
                 </div>
 
-                <div class="bg-black/60 backdrop-blur-sm border border-neon/20 p-5 rounded-xl">
-                    <i class="ph ph-map-pin text-3xl text-neon mb-2" aria-hidden="true"></i>
-                    <h3 class="font-bold mb-1 text-sm">Ubicación</h3>
-                    <p class="text-xs text-gray-400">C. Embajadores, 14<br>47013 Valladolid</p>
+                <!-- CENTRO: Info Cards — oculto no mobile (3 cols) -->
+                <div class="hero-info-cards-wrapper lg:col-span-3">
+                    <div class="hero-info-card backdrop-blur-sm border border-neon/20 p-5 rounded-xl" style="background: rgba(40, 20, 5, 0.15);">
+                        <i class="ph ph-clock text-3xl text-neon mb-2" aria-hidden="true"></i>
+                        <h3 class="font-bold mb-1 text-sm">Horario</h3>
+                        <p class="text-xs text-gray-400">Mar-Vie: 08:00-00:00</p>
+                        <p class="text-xs text-gray-400">Sáb-Dom: 09:00-00:00</p>
+                        <p class="text-xs text-red-400 mt-1">Lunes: Cerrado</p>
+                    </div>
+
+                    <div class="hero-info-card backdrop-blur-sm border border-neon/20 p-5 rounded-xl" style="background: rgba(40, 20, 5, 0.15);">
+                        <i class="ph ph-map-pin text-3xl text-neon mb-2" aria-hidden="true"></i>
+                        <h3 class="font-bold mb-1 text-sm">Ubicación</h3>
+                        <p class="text-xs text-gray-400">C. Embajadores, 14<br>47013 Valladolid</p>
+                    </div>
+
+                    <div class="hero-info-card backdrop-blur-sm border border-neon/20 p-5 rounded-xl" style="background: rgba(40, 20, 5, 0.15);">
+                        <i class="ph ph-phone text-3xl text-neon mb-2" aria-hidden="true"></i>
+                        <h3 class="font-bold mb-1 text-sm">Contacto</h3>
+                        <p class="text-xs text-gray-400">+34 643 51 21 42<br>Respuesta inmediata</p>
+                    </div>
                 </div>
 
-                <div class="bg-black/60 backdrop-blur-sm border border-neon/20 p-5 rounded-xl">
-                    <i class="ph ph-phone text-3xl text-neon mb-2" aria-hidden="true"></i>
-                    <h3 class="font-bold mb-1 text-sm">Contacto</h3>
-                    <p class="text-xs text-gray-400">+34 643 51 21 42<br>Respuesta inmediata</p>
+                <!-- DIREITA: Logo grande (4 cols) -->
+                <div class="hero-logo-container lg:col-span-4">
+                    <img src="logo.png" alt="Los Rombos Bar Logo">
                 </div>
+
             </div>
         </div>
     </section>
@@ -395,7 +687,7 @@
                             :class="filterCategory === cat.key
                                 ? 'bg-neon text-black'
                                 : 'bg-gray-900 hover:bg-gray-800 text-gray-300 border border-gray-700'"
-                            class="px-5 py-2 rounded-full font-semibold transition text-sm">
+                            class="btn-poly px-7 py-2 font-semibold transition text-sm">
                         <span x-text="cat.label"></span>
                     </button>
                 </template>
@@ -405,18 +697,32 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 <template x-for="item in filteredMenu" :key="item.id">
                     <div class="bg-gray-900 rounded-xl overflow-hidden card-hover border border-gray-800 hover:border-neon/30">
+                        <!-- Imagem do produto -->
+                        <div class="h-48 bg-gray-800 flex items-center justify-center overflow-hidden relative food-image-placeholder">
+                            <img :src="item.image || 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'"
+                                 :alt="'Foto de ' + item.name + ' - ' + item.description"
+                                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                                 loading="lazy"
+                                 @error="event.target.style.display='none'; event.target.nextElementSibling.style.display='flex'">
+                            <div class="hidden items-center justify-center w-full h-full">
+                                <i class="ph ph-fork-knife text-4xl text-gray-600" aria-hidden="true"></i>
+                            </div>
+                            <div class="absolute top-3 right-3 bg-neon/90 text-black text-xs font-bold px-3 py-1.5 rounded-full shadow-lg food-badge">
+                                <span x-text="'€' + item.price.toFixed(2)"></span>
+                            </div>
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent h-12"></div>
+                        </div>
+
                         <div class="p-5">
                             <div class="flex items-start justify-between mb-3">
                                 <div class="flex-1">
                                     <h3 class="font-bold text-lg leading-tight" x-text="item.name"></h3>
                                     <p class="text-gray-500 text-xs mt-1" x-text="item.description"></p>
                                 </div>
-                                <span class="bg-neon/15 text-neon px-3 py-1 rounded-full font-bold text-sm ml-3 whitespace-nowrap"
-                                      x-text="'€' + item.price.toFixed(2)"></span>
                             </div>
 
-                            <button @click="addToCart(item)"
-                                    class="w-full bg-gray-800 hover:bg-neon hover:text-black py-2.5 rounded-lg font-semibold transition text-sm flex items-center justify-center space-x-2 border border-gray-700 hover:border-neon">
+                            <button @click="addToCart(item, $event)"
+                                    class="btn-poly w-full bg-gray-800 hover:bg-neon hover:text-black py-2.5 font-semibold transition text-sm flex items-center justify-center space-x-2 border border-gray-700 hover:border-neon">
                                 <i class="ph ph-plus-circle text-lg" aria-hidden="true"></i>
                                 <span>Añadir al Pedido</span>
                             </button>
@@ -428,7 +734,7 @@
             <!-- CTA Pedir após menu -->
             <div class="text-center mt-12" x-show="cart.length > 0" x-transition>
                 <button @click="cartOpen = true"
-                        class="bg-neon hover:bg-neon-dark text-black px-10 py-4 rounded-full font-bold text-lg transition glow-neon inline-flex items-center space-x-3">
+                        class="btn-poly bg-neon hover:bg-neon-dark text-black px-12 py-4 font-bold text-lg transition glow-neon inline-flex items-center space-x-3">
                     <i class="ph-fill ph-shopping-cart text-2xl" aria-hidden="true"></i>
                     <span>Ver Pedido (<span x-text="cart.length"></span> ítems) · €<span x-text="cartTotal.toFixed(2)"></span></span>
                 </button>
@@ -443,11 +749,11 @@
                 <div>
                     <!-- Imagen del local -->
                     <div class="mb-8 rounded-2xl overflow-hidden border border-neon/20 shadow-2xl">
-                        <img src="fachada.png" alt="Taramundi Bar - Fachada del local" class="w-full h-56 md:h-64 object-cover hover:scale-105 transition duration-500" loading="lazy" width="800" height="600">
+                        <img src="fachada.png" alt="Los Rombos Bar - Fachada del local" class="w-full h-56 md:h-64 object-cover hover:scale-105 transition duration-500" loading="lazy" width="800" height="600">
                     </div>
 
                     <h2 class="text-4xl font-bold mb-6">
-                        ¿Por Qué <span class="text-neon text-glow">Taramundi?</span>
+                        ¿Por Qué <span class="text-neon text-glow">Los Rombos</span>?
                     </h2>
 
                     <div class="space-y-5">
@@ -494,7 +800,7 @@
                 </div>
 
                 <div class="relative">
-                    <img src="header-banner.png" alt="Taramundi Bar Interior" class="rounded-2xl shadow-2xl border border-neon/20" loading="lazy" width="800" height="600">
+                    <img src="header-banner.png" alt="Los Rombos Bar Interior" class="rounded-2xl shadow-2xl border border-neon/20" loading="lazy" width="800" height="600">
                     <div class="absolute -bottom-4 -right-4 bg-neon text-black px-6 py-3 rounded-xl font-bold shadow-lg glow-neon-sm hidden md:block">
                         ⭐ 4.5/5 en Google
                     </div>
@@ -561,14 +867,14 @@
                     </h3>
 
                     <div class="space-y-4">
-                        <a href="https://wa.me/34643512142?text=%C2%A1Hola!%20Tengo%20una%20consulta%20sobre%20Taramundi"
-                           class="flex items-center space-x-4 p-4 bg-neon/10 hover:bg-neon/20 border border-neon/30 rounded-lg transition group">
-                            <i class="ph ph-whatsapp-logo text-3xl text-neon" aria-hidden="true"></i>
+                        <a href="https://wa.me/34643512142?text=%C2%A1Hola!%20Tengo%20una%20consulta%20sobre%20Los%20Rombos"
+                           class="flex items-center space-x-4 p-4 bg-whatsapp-green/10 hover:bg-whatsapp-green/20 border border-whatsapp-green/30 rounded-lg transition group">
+                            <i class="ph ph-whatsapp-logo text-3xl text-whatsapp-green" aria-hidden="true"></i>
                             <div>
-                                <p class="text-xs text-neon/70">WhatsApp</p>
+                                <p class="text-xs text-whatsapp-green/70">WhatsApp</p>
                                 <p class="font-bold text-lg">+34 643 51 21 42</p>
                             </div>
-                            <i class="ph ph-caret-right ml-auto text-2xl text-neon group-hover:translate-x-2 transition" aria-hidden="true"></i>
+                            <i class="ph ph-caret-right ml-auto text-2xl text-whatsapp-green group-hover:translate-x-2 transition" aria-hidden="true"></i>
                         </a>
 
                         <a href="https://wa.me/34643512142?text=%C2%A1Hola!%20Prefiero%20hablar%20por%20tel%C3%A9fono%2C%20%C2%BFpueden%20llamarme%3F"
@@ -581,7 +887,7 @@
                             <i class="ph ph-caret-right ml-auto text-2xl text-gray-500 group-hover:translate-x-2 transition" aria-hidden="true"></i>
                         </a>
 
-                        <a href="https://www.google.com/maps/place/Taramundi/@41.6387748,-4.7220116,17z"
+                        <a href="https://www.google.com/maps/place/Los+Rombos,+C.+Embajadores+14,+Valladolid/@41.6387748,-4.7220116,17z"
                            target="_blank"
                            class="flex items-center space-x-4 p-4 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-lg transition group">
                             <i class="ph ph-map-pin text-3xl text-neon" aria-hidden="true"></i>
@@ -592,13 +898,13 @@
                             <i class="ph ph-caret-right ml-auto text-2xl text-gray-500 group-hover:translate-x-2 transition" aria-hidden="true"></i>
                         </a>
 
-                        <a href="https://www.instagram.com/taramundi16/"
+                        <a href="https://www.instagram.com/losrombos/"
                            target="_blank"
                            class="flex items-center space-x-4 p-4 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-lg transition group">
                             <i class="ph ph-instagram-logo text-3xl text-neon" aria-hidden="true"></i>
                             <div>
                                 <p class="text-xs text-gray-500">Instagram</p>
-                                <p class="font-bold text-lg">@taramundi16</p>
+                                <p class="font-bold text-lg">@losrombos</p>
                             </div>
                             <i class="ph ph-caret-right ml-auto text-2xl text-gray-500 group-hover:translate-x-2 transition" aria-hidden="true"></i>
                         </a>
@@ -614,28 +920,28 @@
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row items-center justify-between gap-6">
                 <div class="flex items-center space-x-3">
-                    <img src="logo.png" alt="Taramundi Logo" class="h-10" width="40" height="40">
+                    <img src="logo.png" alt="Los Rombos Logo" class="h-10" width="40" height="40">
                     <div>
-                        <p class="font-bold text-neon">Taramundi</p>
+                        <p class="font-bold text-neon">Los Rombos</p>
                         <p class="text-xs text-gray-500">Bar & Restaurante · Valladolid</p>
                     </div>
                 </div>
 
                 <div class="flex items-center space-x-4">
-                    <a href="https://www.instagram.com/taramundi16/" target="_blank" class="bg-gray-900 hover:bg-neon hover:text-black w-10 h-10 rounded-full flex items-center justify-center transition border border-gray-800 hover:border-neon" aria-label="Instagram de Taramundi">
+                    <a href="https://www.instagram.com/losrombos/" target="_blank" class="bg-gray-900 hover:bg-neon hover:text-black w-10 h-10 rounded-full flex items-center justify-center transition border border-gray-800 hover:border-neon" aria-label="Instagram de Los Rombos">
                         <i class="ph ph-instagram-logo text-xl" aria-hidden="true"></i>
                     </a>
-                    <a href="https://wa.me/34643512142" class="bg-gray-900 hover:bg-neon hover:text-black w-10 h-10 rounded-full flex items-center justify-center transition border border-gray-800 hover:border-neon" aria-label="WhatsApp de Taramundi">
+                    <a href="https://wa.me/34643512142" class="bg-gray-900 hover:bg-whatsapp-green hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition border border-gray-800 hover:border-whatsapp-green" aria-label="WhatsApp de Los Rombos">
                         <i class="ph ph-whatsapp-logo text-xl" aria-hidden="true"></i>
                     </a>
-                    <a href="https://www.google.com/maps/place/Taramundi/@41.6387748,-4.7220116,17z" target="_blank" class="bg-gray-900 hover:bg-neon hover:text-black w-10 h-10 rounded-full flex items-center justify-center transition border border-gray-800 hover:border-neon" aria-label="Ubicación en Google Maps">
+                    <a href="https://www.google.com/maps/place/Los+Rombos,+C.+Embajadores+14,+Valladolid/@41.6387748,-4.7220116,17z" target="_blank" class="bg-gray-900 hover:bg-neon hover:text-black w-10 h-10 rounded-full flex items-center justify-center transition border border-gray-800 hover:border-neon" aria-label="Ubicación de Los Rombos en Google Maps">
                         <i class="ph ph-map-pin text-xl" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
 
             <div class="border-t border-gray-900 mt-8 pt-6 text-center text-gray-600 text-xs">
-                <p>&copy; 2026 Taramundi Bar & Restaurante. Todos los derechos reservados.</p>
+                <p>&copy; 2026 Los Rombos Bar & Restaurante. Todos los derechos reservados.</p>
                 <p class="mt-1">Desarrollado por <span class="text-neon font-semibold">Leo Forge Factory</span></p>
             </div>
         </div>
@@ -652,8 +958,8 @@
     </button>
 
     <!-- WhatsApp Flutuante (DIREITA) -->
-    <a href="https://wa.me/34643512142?text=%C2%A1Hola!%20Quiero%20hacer%20un%20pedido%20en%20Taramundi"
-       class="fixed bottom-5 right-5 bg-neon hover:bg-neon-dark text-black w-16 h-16 rounded-full flex items-center justify-center shadow-2xl glow-neon-sm transition z-40"
+    <a href="https://wa.me/34643512142?text=%C2%A1Hola!%20Quiero%20hacer%20un%20pedido%20en%20Los%20Rombos"
+       class="fixed bottom-5 right-5 bg-whatsapp-green hover:bg-whatsapp-green-dark text-white whatsapp-diamond flex items-center justify-center whatsapp-shadow whatsapp-shadow-hover transition z-40"
        aria-label="Pedir por WhatsApp">
         <i class="ph-fill ph-whatsapp-logo text-3xl" aria-hidden="true"></i>
     </a>
@@ -720,7 +1026,7 @@
                 </div>
 
                 <button @click="sendOrderWhatsApp()"
-                        class="w-full bg-neon hover:bg-neon-dark text-black py-4 rounded-xl font-bold text-lg transition glow-neon flex items-center justify-center space-x-3">
+                        class="w-full bg-whatsapp-green hover:bg-whatsapp-green-dark text-white py-4 rounded-xl font-bold text-lg transition whatsapp-shadow whatsapp-shadow-hover flex items-center justify-center space-x-3">
                     <i class="ph ph-whatsapp-logo text-2xl" aria-hidden="true"></i>
                     <span>Enviar Pedido por WhatsApp</span>
                 </button>
@@ -733,15 +1039,161 @@
         </div>
     </div>
 
+    <!-- Modal de Reserva -->
+    <div x-show="reservationOpen"
+         x-transition
+         class="fixed inset-0 z-[999] flex items-end md:items-center justify-center p-4"
+         role="dialog"
+         aria-modal="true"
+         aria-label="Reservar Mesa">
+
+        <div @click="reservationOpen = false" class="absolute inset-0 modal-backdrop"></div>
+
+        <div class="relative bg-gray-950 rounded-t-3xl md:rounded-3xl w-full max-w-2xl max-h-[90vh] overflow-y-auto border border-neon/30">
+
+            <!-- Header -->
+            <div class="sticky top-0 bg-black p-6 border-b border-neon/20 flex items-center justify-between">
+                <div>
+                    <h3 class="text-2xl font-bold flex items-center space-x-2">
+                        <i class="ph ph-calendar text-neon" aria-hidden="true"></i>
+                        <span>Reservar Mesa</span>
+                    </h3>
+                    <p class="text-sm text-gray-500 mt-1">Selecciona fecha, hora y mesa</p>
+                </div>
+                <button @click="reservationOpen = false" class="text-gray-500 hover:text-white" aria-label="Cerrar reserva">
+                    <i class="ph ph-x text-3xl" aria-hidden="true"></i>
+                </button>
+            </div>
+
+            <!-- Contenido -->
+            <div class="p-6 space-y-4">
+                <!-- Fila 1: Fecha y Personas -->
+                <div class="reservation-form-row">
+                    <div>
+                        <label for="res-date" class="text-xs text-gray-500 block mb-2">Fecha *</label>
+                        <input type="date" id="res-date" x-model="reservationForm.date"
+                               class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:border-neon focus:outline-none text-sm">
+                    </div>
+                    <div>
+                        <label for="res-people" class="text-xs text-gray-500 block mb-2">Personas *</label>
+                        <select id="res-people" x-model.number="reservationForm.people"
+                                class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:border-neon focus:outline-none text-sm">
+                            <option value="2">2 personas</option>
+                            <option value="4">4 personas</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Hora disponible -->
+                <div x-show="reservationForm.date">
+                    <label for="res-time" class="text-xs text-gray-500 block mb-2">Hora *</label>
+                    <select id="res-time" x-model="reservationForm.time"
+                            class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:border-neon focus:outline-none text-sm">
+                        <option value="">Selecciona una hora</option>
+                        <template x-for="time in getAvailableTimes(reservationForm.date)" :key="time">
+                            <option :value="time" x-text="time"></option>
+                        </template>
+                    </select>
+                </div>
+
+                <!-- Grid de Mesas -->
+                <div x-show="reservationForm.date && reservationForm.time">
+                    <label class="text-xs text-gray-500 block mb-2">Mesas Disponibles *</label>
+                    <div class="table-grid">
+                        <template x-for="table in getAvailableTables(reservationForm.date, reservationForm.time, parseInt(reservationForm.people))" :key="table.id">
+                            <div @click="selectTable(table)"
+                                 :class="selectedTable?.id === table.id ? 'table-card selected' : 'table-card available'">
+                                <div>Mesa <span x-text="table.id"></span></div>
+                                <div class="table-capacity"><span x-text="table.capacity"></span> pax</div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+
+                <!-- Formulario de Datos -->
+                <div class="border-t border-gray-800 pt-4 mt-4">
+                    <h4 class="text-sm font-semibold text-white mb-3">Tus datos</h4>
+
+                    <div class="space-y-3">
+                        <div>
+                            <label for="res-name" class="text-xs text-gray-500 block mb-1">Nombre *</label>
+                            <input type="text" id="res-name" x-model="reservationForm.name" placeholder="Tu nombre completo"
+                                   class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-2.5 text-white placeholder-gray-600 focus:border-neon focus:outline-none text-sm">
+                        </div>
+
+                        <div class="reservation-form-row">
+                            <div>
+                                <label for="res-email" class="text-xs text-gray-500 block mb-1">Email</label>
+                                <input type="email" id="res-email" x-model="reservationForm.email" placeholder="tu@email.com"
+                                       class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-2.5 text-white placeholder-gray-600 focus:border-neon focus:outline-none text-sm">
+                            </div>
+                            <div>
+                                <label for="res-phone" class="text-xs text-gray-500 block mb-1">Teléfono *</label>
+                                <input type="tel" id="res-phone" x-model="reservationForm.phone" placeholder="+34 123 456 789"
+                                       class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-2.5 text-white placeholder-gray-600 focus:border-neon focus:outline-none text-sm">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="res-notes" class="text-xs text-gray-500 block mb-1">Observaciones (opcional)</label>
+                            <textarea id="res-notes" x-model="reservationForm.notes" placeholder="Cumpleaños, alergias, preferencias..."
+                                      class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-2.5 text-white placeholder-gray-600 focus:border-neon focus:outline-none text-sm h-20 resize-none"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="sticky bottom-0 bg-black p-6 border-t border-neon/20 space-y-2">
+                <button @click="sendReservationWhatsApp()"
+                        class="btn-poly w-full bg-neon hover:bg-neon-dark text-black py-4 font-bold text-lg transition glow-neon flex items-center justify-center space-x-3">
+                    <i class="ph ph-whatsapp-logo text-2xl" aria-hidden="true"></i>
+                    <span>Confirma vía WhatsApp</span>
+                </button>
+
+                <button @click="reservationOpen = false" type="button"
+                        class="w-full text-gray-400 hover:text-gray-300 py-2 text-sm transition">
+                    Cancelar
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Alpine.js App -->
     <script>
         function taramundiApp() {
             return {
                 mobileMenuOpen: false,
                 cartOpen: false,
+                reservationOpen: false,
                 filterCategory: 'todos',
                 cart: [],
                 orderNotes: '',
+
+                // Reserva
+                selectedTable: null,
+                reservationForm: {
+                    name: '',
+                    email: '',
+                    phone: '',
+                    date: '',
+                    time: '',
+                    people: 2,
+                    notes: ''
+                },
+                tables: [
+                    { id: 1, capacity: 2 },
+                    { id: 2, capacity: 2 },
+                    { id: 3, capacity: 2 },
+                    { id: 4, capacity: 2 },
+                    { id: 5, capacity: 4 },
+                    { id: 6, capacity: 4 },
+                    { id: 7, capacity: 4 },
+                    { id: 8, capacity: 4 },
+                    { id: 9, capacity: 4 },
+                    { id: 10, capacity: 4 }
+                ],
+                bookedSlots: [],
 
                 categories: [
                     { key: 'todos', label: '🍽️ Todos' },
@@ -757,64 +1209,64 @@
 
                 menuItems: [
                     // DESAYUNOS
-                    { id: 1,  name: 'Tostada + Aceite', category: 'desayunos', price: 3.30, description: 'Tostada con aceite de oliva virgen' },
-                    { id: 2,  name: 'Tostada + Tomate y Jamón Serrano', category: 'desayunos', price: 3.50, description: 'Pan tostado con tomate natural y jamón' },
-                    { id: 3,  name: 'Tostada + Nutella', category: 'desayunos', price: 3.50, description: 'Tostada con crema de avellanas' },
-                    { id: 4,  name: 'Tostada + Tomate', category: 'desayunos', price: 4.50, description: 'Pan con tomate rallado' },
-                    { id: 5,  name: 'Tortilla de Patata', category: 'desayunos', price: 4.00, description: 'Tortilla española jugosa' },
-                    { id: 6,  name: 'Tortilla Francesa', category: 'desayunos', price: 4.00, description: 'Tortilla francesa clásica' },
-                    { id: 7,  name: 'Americano', category: 'desayunos', price: 4.70, description: 'Huevos, bacon, salchichas y tostada' },
-                    { id: 8,  name: 'Croissant Jamón y Queso', category: 'desayunos', price: 4.50, description: 'Croissant relleno caliente' },
+                    { id: 1,  name: 'Tostada + Aceite', category: 'desayunos', price: 3.30, description: 'Tostada con aceite de oliva virgen', image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+                    { id: 2,  name: 'Tostada + Tomate y Jamón Serrano', category: 'desayunos', price: 3.50, description: 'Pan tostado con tomate natural y jamón', image: 'https://images.unsplash.com/photo-1606503153257-0fd4bd2e595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+                    { id: 3,  name: 'Tostada + Nutella', category: 'desayunos', price: 3.50, description: 'Tostada con crema de avellanas', image: 'https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+                    { id: 4,  name: 'Tostada + Tomate', category: 'desayunos', price: 4.50, description: 'Pan con tomate rallado', image: 'https://images.unsplash.com/photo-1556656793-08538906a9f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+                    { id: 5,  name: 'Tortilla de Patata', category: 'desayunos', price: 4.00, description: 'Tortilla española jugosa', image: 'https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+                    { id: 6,  name: 'Tortilla Francesa', category: 'desayunos', price: 4.00, description: 'Tortilla francesa clásica', image: 'https://images.unsplash.com/photo-1567337710282-00832b415979?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+                    { id: 7,  name: 'Americano', category: 'desayunos', price: 4.70, description: 'Huevos, bacon, salchichas y tostada', image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+                    { id: 8,  name: 'Croissant Jamón y Queso', category: 'desayunos', price: 4.50, description: 'Croissant relleno caliente', image: 'https://images.unsplash.com/photo-1555507036-ab794f27d2e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
 
                     // HAMBURGUESAS
-                    { id: 10, name: 'Clásica Doble', category: 'hamburguesas', price: 9.50, description: 'Doble de carne de vacuno premium' },
-                    { id: 11, name: 'Krispy Clásica Doble', category: 'hamburguesas', price: 8.20, description: 'Pollo rebozado crujiente doble' },
-                    { id: 12, name: 'Suprema', category: 'hamburguesas', price: 8.20, description: 'Carne de vacuno premium, bacon y queso' },
-                    { id: 13, name: 'Suprema Doble', category: 'hamburguesas', price: 9.70, description: 'Doble de carne premium, huevo, bacon y queso' },
-                    { id: 14, name: 'Suprema Krispy Doble', category: 'hamburguesas', price: 8.70, description: 'Doble de pollo crujiente, huevo, bacon y queso' },
-                    { id: 15, name: 'Taramundi', category: 'hamburguesas', price: 10.70, description: 'Bacon y queso, pepillo, triple carne — ¡La estrella!' },
+                    { id: 10, name: 'Clásica Doble', category: 'hamburguesas', price: 9.50, description: 'Doble de carne de vacuno premium', image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+                    { id: 11, name: 'Krispy Clásica Doble', category: 'hamburguesas', price: 8.20, description: 'Pollo rebozado crujiente doble', image: 'https://images.unsplash.com/photo-1625813506062-0aeb1d7a0940?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+                    { id: 12, name: 'Suprema', category: 'hamburguesas', price: 8.20, description: 'Carne de vacuno premium, bacon y queso', image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+                    { id: 13, name: 'Suprema Doble', category: 'hamburguesas', price: 9.70, description: 'Doble de carne premium, huevo, bacon y queso', image: 'https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+                    { id: 14, name: 'Suprema Krispy Doble', category: 'hamburguesas', price: 8.70, description: 'Doble de pollo crujiente, huevo, bacon y queso', image: 'https://images.unsplash.com/photo-1626074353765-517a681e40be?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+                    { id: 15, name: 'Los Rombos', category: 'hamburguesas', price: 10.70, description: 'Bacon y queso, pepillo, triple carne — ¡La estrella!', image: 'https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
 
                     // RACIONES
-                    { id: 20, name: 'Torrezno', category: 'raciones', price: 5.70, description: 'Torrezno crujiente de Soria' },
-                    { id: 21, name: 'Patatas 3 Salsas', category: 'raciones', price: 5.00, description: 'Patatas fritas con alioli, brava y kétchup' },
-                    { id: 22, name: 'Patatas Bravas', category: 'raciones', price: 5.50, description: 'Patatas con salsa brava picante' },
-                    { id: 23, name: 'Patatas de la Casa', category: 'raciones', price: 7.70, description: 'Bacon, queso y cebolla caramelizada' },
-                    { id: 24, name: 'Fingers', category: 'raciones', price: 9.00, description: 'Fingers de pollo crujientes' },
-                    { id: 25, name: 'Calamares', category: 'raciones', price: 11.00, description: 'Calamares a la romana' },
+                    { id: 20, name: 'Torrezno', category: 'raciones', price: 5.70, description: 'Torrezno crujiente de Soria', image: 'https://images.unsplash.com/photo-1625944515878-009e7750e8a4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+                    { id: 21, name: 'Patatas 3 Salsas', category: 'raciones', price: 5.00, description: 'Patatas fritas con alioli, brava y kétchup', image: 'https://images.unsplash.com/photo-1586190848861-99aa4a171e90?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+                    { id: 22, name: 'Patatas Bravas', category: 'raciones', price: 5.50, description: 'Patatas con salsa brava picante', image: 'https://images.unsplash.com/photo-1586190848861-99aa4a171e90?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+                    { id: 23, name: 'Patatas de la Casa', category: 'raciones', price: 7.70, description: 'Bacon, queso y cebolla caramelizada', image: 'https://images.unsplash.com/photo-1598135753163-6167c9d6d0d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+                    { id: 24, name: 'Fingers', category: 'raciones', price: 9.00, description: 'Fingers de pollo crujientes', image: 'https://images.unsplash.com/photo-1625813506062-0aeb1d7a0940?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+                    { id: 25, name: 'Calamares', category: 'raciones', price: 11.00, description: 'Calamares a la romana', image: 'https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
 
                     // BOCATAS
-                    { id: 30, name: 'Bocata de Calamares', category: 'bocatas', price: 6.20, description: 'Bocadillo clásico de calamares' },
-                    { id: 31, name: 'Bocata de Rabas', category: 'bocatas', price: 7.20, description: 'Rabas rebozadas en pan crujiente' },
-                    { id: 32, name: 'Bocata de Ternera', category: 'bocatas', price: 8.20, description: 'Filete de ternera a la plancha' },
-                    { id: 33, name: 'Bocata de Panceta', category: 'bocatas', price: 6.70, description: 'Panceta a la plancha en bocadillo' },
-                    { id: 34, name: 'Bocata Bacon con Queso', category: 'bocatas', price: 6.70, description: 'Bacon crujiente con queso fundido' },
-                    { id: 35, name: 'Bocata de la Casa', category: 'bocatas', price: 8.20, description: 'Salchicha, tomate, cebolla, bacon, huevos, queso y pechuga a la plancha' },
+                    { id: 30, name: 'Bocata de Calamares', category: 'bocatas', price: 6.20, description: 'Bocadillo clásico de calamares', image: 'https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+                    { id: 31, name: 'Bocata de Rabas', category: 'bocatas', price: 7.20, description: 'Rabas rebozadas en pan crujiente', image: 'https://images.unsplash.com/photo-1559314809-2b99056a8c4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+                    { id: 32, name: 'Bocata de Ternera', category: 'bocatas', price: 8.20, description: 'Filete de ternera a la plancha', image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+                    { id: 33, name: 'Bocata de Panceta', category: 'bocatas', price: 6.70, description: 'Panceta a la plancha en bocadillo', image: 'https://images.unsplash.com/photo-1600891964092-4316c288032e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+                    { id: 34, name: 'Bocata Bacon con Queso', category: 'bocatas', price: 6.70, description: 'Bacon crujiente con queso fundido', image: 'https://images.unsplash.com/photo-1600891964092-4316c288032e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+                    { id: 35, name: 'Bocata de la Casa', category: 'bocatas', price: 8.20, description: 'Salchicha, tomate, cebolla, bacon, huevos, queso y pechuga a la plancha', image: 'https://images.unsplash.com/photo-1606755962773-d324e0a13086?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
 
                     // SANDWICHES & PERRITOS
-                    { id: 40, name: 'Sándwich Mixto', category: 'sandwiches', price: 5.70, description: 'Jamón y queso clásico' },
-                    { id: 41, name: 'Sándwich Bacon', category: 'sandwiches', price: 6.20, description: 'Bacon crujiente con queso' },
-                    { id: 42, name: 'Sándwich Vegetal', category: 'sandwiches', price: 6.70, description: 'Verduras frescas y salsas' },
-                    { id: 43, name: 'Perrito Clásico', category: 'sandwiches', price: 6.20, description: 'Hot dog clásico con mostaza y kétchup' },
-                    { id: 44, name: 'Perrito Taramundi', category: 'sandwiches', price: 7.20, description: 'Perrito especial de la casa' },
+                    { id: 40, name: 'Sándwich Mixto', category: 'sandwiches', price: 5.70, description: 'Jamón y queso clásico', image: 'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+                    { id: 41, name: 'Sándwich Bacon', category: 'sandwiches', price: 6.20, description: 'Bacon crujiente con queso', image: 'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+                    { id: 42, name: 'Sándwich Vegetal', category: 'sandwiches', price: 6.70, description: 'Verduras frescas y salsas', image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+                    { id: 43, name: 'Perrito Clásico', category: 'sandwiches', price: 6.20, description: 'Hot dog clásico con mostaza y kétchup', image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+                    { id: 44, name: 'Perrito Los Rombos', category: 'sandwiches', price: 7.20, description: 'Perrito especial de la casa', image: 'https://images.unsplash.com/photo-1619740455993-9e612b1af08a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
 
                     // TABLAS & PLATOS COMBINADOS
-                    { id: 50, name: 'Cachopo Individual', category: 'tablas', price: 20.00, description: 'Cachopo clásico para una persona' },
-                    { id: 51, name: 'Cachopo para Dos', category: 'tablas', price: 35.00, description: 'Cachopo grande para compartir' },
-                    { id: 52, name: 'Tabla Taramundi', category: 'tablas', price: 15.00, description: 'Selección de la casa para compartir' },
-                    { id: 53, name: 'Rabas', category: 'tablas', price: 9.00, description: 'Rabas rebozadas crujientes' },
-                    { id: 54, name: 'Lomo a la Plancha', category: 'tablas', price: 9.00, description: 'Lomo de cerdo a la plancha' },
-                    { id: 55, name: 'Pechuga a la Plancha', category: 'tablas', price: 9.00, description: 'Pechuga de pollo a la plancha' },
-                    { id: 56, name: 'Ternera a la Plancha', category: 'tablas', price: 9.00, description: 'Filete de ternera a la plancha' },
+                    { id: 50, name: 'Cachopo Individual', category: 'tablas', price: 20.00, description: 'Cachopo clásico para una persona', image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+                    { id: 51, name: 'Cachopo para Dos', category: 'tablas', price: 35.00, description: 'Cachopo grande para compartir', image: 'https://images.unsplash.com/photo-1602253057119-44d745d9b860?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+                    { id: 52, name: 'Tabla Los Rombos', category: 'tablas', price: 15.00, description: 'Selección de la casa para compartir', image: 'https://images.unsplash.com/photo-1559314809-2b99056a8c4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+                    { id: 53, name: 'Rabas', category: 'tablas', price: 9.00, description: 'Rabas rebozadas crujientes', image: 'https://images.unsplash.com/photo-1559314809-2b99056a8c4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+                    { id: 54, name: 'Lomo a la Plancha', category: 'tablas', price: 9.00, description: 'Lomo de cerdo a la plancha', image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+                    { id: 55, name: 'Pechuga a la Plancha', category: 'tablas', price: 9.00, description: 'Pechuga de pollo a la plancha', image: 'https://images.unsplash.com/photo-1603360946369-dc9bb6258143?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+                    { id: 56, name: 'Ternera a la Plancha', category: 'tablas', price: 9.00, description: 'Filete de ternera a la plancha', image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
 
                     // SARTENES
-                    { id: 60, name: 'Huevos Rotos con Jijas', category: 'sartenes', price: 9.00, description: 'Huevos rotos con jijas caseras' },
-                    { id: 61, name: 'Huevos Rotos con Lacón', category: 'sartenes', price: 9.00, description: 'Huevos rotos con lacón gallego' },
-                    { id: 62, name: 'Huevos Rotos con Morcilla', category: 'sartenes', price: 9.00, description: 'Huevos rotos con morcilla de Burgos' },
-                    { id: 63, name: 'Huevos Rotos con Torrezno', category: 'sartenes', price: 9.00, description: 'Huevos rotos con torrezno crujiente' },
+                    { id: 60, name: 'Huevos Rotos con Jijas', category: 'sartenes', price: 9.00, description: 'Huevos rotos con jijas caseras', image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+                    { id: 61, name: 'Huevos Rotos con Lacón', category: 'sartenes', price: 9.00, description: 'Huevos rotos con lacón gallego', image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+                    { id: 62, name: 'Huevos Rotos con Morcilla', category: 'sartenes', price: 9.00, description: 'Huevos rotos con morcilla de Burgos', image: 'https://images.unsplash.com/photo-1567337710282-00832b415979?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+                    { id: 63, name: 'Huevos Rotos con Torrezno', category: 'sartenes', price: 9.00, description: 'Huevos rotos con torrezno crujiente', image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
 
                     // POSTRES
-                    { id: 70, name: 'Tarta de Queso', category: 'postres', price: 4.00, description: 'Tarta de queso casera cremosa' },
-                    { id: 71, name: 'Tarta de Chocolate', category: 'postres', price: 4.00, description: 'Tarta de chocolate intenso' },
+                    { id: 70, name: 'Tarta de Queso', category: 'postres', price: 4.00, description: 'Tarta de queso casera cremosa', image: 'https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+                    { id: 71, name: 'Tarta de Chocolate', category: 'postres', price: 4.00, description: 'Tarta de chocolate intenso', image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
                 ],
 
                 get filteredMenu() {
@@ -826,16 +1278,20 @@
                     return this.cart.reduce((sum, item) => sum + item.price, 0);
                 },
 
-                addToCart(item) {
+                addToCart(item, event) {
                     this.cart.push({...item});
-                    const btn = event.target.closest('button');
-                    const orig = btn.innerHTML;
-                    btn.innerHTML = '<i class="ph-fill ph-check-circle text-lg"></i> <span>¡Añadido!</span>';
-                    btn.classList.add('bg-neon', 'text-black', 'border-neon');
-                    setTimeout(() => {
-                        btn.innerHTML = orig;
-                        btn.classList.remove('bg-neon', 'text-black', 'border-neon');
-                    }, 800);
+                    if (event && event.target) {
+                        const btn = event.target.closest('button');
+                        if (btn) {
+                            const orig = btn.innerHTML;
+                            btn.innerHTML = '<i class="ph-fill ph-check-circle text-lg"></i> <span>¡Añadido!</span>';
+                            btn.classList.add('bg-neon', 'text-black', 'border-neon');
+                            setTimeout(() => {
+                                btn.innerHTML = orig;
+                                btn.classList.remove('bg-neon', 'text-black', 'border-neon');
+                            }, 800);
+                        }
+                    }
                 },
 
                 removeFromCart(index) {
@@ -855,7 +1311,7 @@
                         }
                     });
 
-                    let msg = '🍽️ *PEDIDO — TARAMUNDI BAR*\n';
+                    let msg = '🍽️ *PEDIDO — LOS ROMBOS BAR*\n';
                     msg += '━━━━━━━━━━━━━━━━━━\n\n';
 
                     Object.values(grouped).forEach((item, i) => {
@@ -883,6 +1339,120 @@
                         this.cart = [];
                         this.orderNotes = '';
                         this.cartOpen = false;
+                    }, 1000);
+                },
+
+                // Métodos de Reserva
+                getBusinessHours(date) {
+                    const dayOfWeek = new Date(date).getDay();
+                    if (dayOfWeek === 1) return null; // Segunda fechado
+
+                    if (dayOfWeek === 0 || dayOfWeek === 6) {
+                        return { start: 9, end: 24 }; // Sábado-Domingo 09:00-00:00
+                    }
+                    return { start: 8, end: 24 }; // Martes-Viernes 08:00-00:00
+                },
+
+                getAvailableTimes(date) {
+                    const hours = this.getBusinessHours(date);
+                    if (!hours) return [];
+
+                    const times = [];
+                    for (let h = hours.start; h < hours.end; h++) {
+                        times.push(`${h.toString().padStart(2, '0')}:00`);
+                        times.push(`${h.toString().padStart(2, '0')}:30`);
+                    }
+                    return times;
+                },
+
+                getAvailableTables(date, time, people) {
+                    return this.tables.filter(table => {
+                        if (table.capacity !== people) return false;
+                        const isBooked = this.bookedSlots.some(slot =>
+                            slot.date === date &&
+                            slot.time === time &&
+                            slot.tableId === table.id
+                        );
+                        return !isBooked;
+                    });
+                },
+
+                selectTable(table) {
+                    this.selectedTable = this.selectedTable?.id === table.id ? null : table;
+                },
+
+                isValidReservation() {
+                    const { name, email, phone, date, time, people } = this.reservationForm;
+
+                    // Validar campos obligatorios primero
+                    if (!name.trim() || !phone.trim() || !date || !time) return false;
+
+                    // Validar fecha
+                    const selectedDate = new Date(date);
+                    const today = new Date();
+                    today.setHours(0, 0, 0, 0);
+                    if (selectedDate < today) return false;
+
+                    const dayOfWeek = selectedDate.getDay();
+                    if (dayOfWeek === 1) return false; // Lunes cerrado
+
+                    // Validar hora dentro del horario
+                    const hours = this.getBusinessHours(date);
+                    if (!hours) return false;
+                    const [h, m] = time.split(':').map(Number);
+                    if (h < hours.start || (h >= hours.end && m > 0)) return false;
+
+                    // Validar mesa seleccionada
+                    if (!this.selectedTable) return false;
+
+                    return true;
+                },
+
+                sendReservationWhatsApp() {
+                    if (!this.isValidReservation()) {
+                        alert('Por favor, completa todos los campos obligatorios');
+                        return;
+                    }
+
+                    const dateObj = new Date(this.reservationForm.date);
+                    const formattedDate = dateObj.toLocaleDateString('es-ES', {
+                        weekday: 'long',
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    });
+
+                    let msg = '📅 *RESERVA — LOS ROMBOS BAR*\n';
+                    msg += '━━━━━━━━━━━━━━━━━━\n\n';
+                    msg += `👤 Nombre: ${this.reservationForm.name}\n`;
+                    if (this.reservationForm.email) {
+                        msg += `📧 Email: ${this.reservationForm.email}\n`;
+                    }
+                    msg += `📞 Teléfono: ${this.reservationForm.phone}\n\n`;
+                    msg += `👥 Personas: ${this.reservationForm.people}\n`;
+                    msg += `📅 Fecha: ${formattedDate}\n`;
+                    msg += `⏰ Hora: ${this.reservationForm.time}\n`;
+                    msg += `🪑 Mesa #${this.selectedTable.id}\n\n`;
+                    if (this.reservationForm.notes) {
+                        msg += `📝 Notas: ${this.reservationForm.notes}\n\n`;
+                    }
+                    msg += '━━━━━━━━━━━━━━━━━━\n';
+                    msg += '¿Confirmar reserva?';
+
+                    window.open(`https://wa.me/34643512142?text=${encodeURIComponent(msg)}`, '_blank');
+
+                    setTimeout(() => {
+                        this.reservationOpen = false;
+                        this.selectedTable = null;
+                        this.reservationForm = {
+                            name: '',
+                            email: '',
+                            phone: '',
+                            date: '',
+                            time: '',
+                            people: 2,
+                            notes: ''
+                        };
                     }, 1000);
                 }
             }

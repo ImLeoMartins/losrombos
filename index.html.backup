@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taramundi Bar | El mejor ambiente de Valladolid</title>
+    <meta name="description" content="Ven a disfrutar del mejor ambiente de Valladolid. Bebidas frías, tapas y atención directa.">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#09090b', // zinc-950
+                            primary: '#39FF14', // Verde Neon Logo
+                            accent: '#22C55E' // emerald-500 fallback
+                        },
+                        whatsapp: '#25D366'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        /* Efeito de brilho neon puro para detalhes se necessário */
+        .neon-glow {
+            box-shadow: 0 0 15px rgba(57, 255, 20, 0.4);
+        }
+        .text-neon {
+            text-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-gray-200 font-sans antialiased selection:bg-brand-primary selection:text-black">
+
+    <!-- NAVBAR (HEADER FIXO) -->
+    <nav class="fixed top-0 w-full bg-black/80 backdrop-blur-md z-50 border-b border-white/5 transition-all">
+        <div class="max-w-5xl mx-auto px-4 h-20 flex items-center justify-center">
+            <!-- Certifique-se de salvar a imagem final como logo.png nesta pasta -->
+            <img src="header-banner.png" alt="Taramundi Bar Logo" class="h-14 md:h-16 w-auto object-contain mix-blend-screen drop-shadow-xl">
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="relative bg-brand-dark pt-32 pb-32 px-4 text-center overflow-hidden border-b border-white/5">
+        <!-- Fundo sutil / Overlay -->
+        <div class="absolute inset-0 z-0 opacity-30">
+            <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=1974&auto=format&fit=crop" alt="Ambiente do Bar" class="w-full h-full object-cover object-center">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
+            <span class="inline-flex items-center gap-2 px-3 py-1 bg-black/50 backdrop-blur text-sm font-semibold text-brand-primary rounded-full mb-6 border border-brand-primary/20">
+                <i class="ph ph-star-fill"></i> 4,5/5 por más de 200 clientes!
+            </span>
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 text-white text-neon">
+                El mejor ambiente de Valladolid te espera en <span class="text-brand-primary">Taramundi</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
+                Bebidas frías, tapas deliciosas y un entorno increíble para ti y tus amigos. Saltate las apps, reserva directo con nosotros.
+            </p>
+            <a href="https://wa.me/34643512142?text=Hola,%20me%20gustar%C3%ADa%20hacer%20una%20reserva/pedido%20en%20Taramundi%20Bar." target="_blank" rel="noopener" class="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-brand-primary text-black hover:bg-white hover:text-black font-extrabold py-4 px-8 rounded-full shadow-[0_0_20px_rgba(57,255,20,0.3)] transition-all hover:scale-105 active:scale-95 text-lg">
+                <i class="ph-fill ph-whatsapp text-2xl"></i> Reservar Mesa / WhatsApp
+            </a>
+        </div>
+    </header>
+
+    <!-- SECUNDÁRIA (Benefícios clicáveis) -->
+    <section class="py-16 px-4 bg-zinc-900 border-b border-white/5">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+
+            <a href="https://www.google.com/maps/place/Taramundi/@41.6387748,-4.7220116,17z" target="_blank" class="block bg-black/40 p-6 rounded-2xl border border-white/10 hover:border-brand-primary hover:bg-black/60 transition-all group flex flex-col items-center text-center shadow-lg">
+                <div class="w-14 h-14 bg-brand-primary/10 text-brand-primary rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <i class="ph ph-map-pin text-3xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-white">Ubicación Inmejorable</h3>
+                <p class="text-gray-400 text-sm">C. Embajadores, 14. Estamos cerca. <span class="text-brand-primary font-semibold mt-2 block">Ver en el mapa &rarr;</span></p>
+            </a>
+
+            <a href="https://wa.me/34643512142?text=Hola,%20quisiera%20garantizar%20mi%20mesa!" target="_blank" class="block bg-black/40 p-6 rounded-2xl border border-white/10 hover:border-whatsapp hover:bg-black/60 transition-all group flex flex-col items-center text-center shadow-lg">
+                <div class="w-14 h-14 bg-whatsapp/10 text-whatsapp rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <i class="ph ph-device-mobile-camera text-3xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-white">Reserva Exprés</h3>
+                <p class="text-gray-400 text-sm">Olvídate de procesos largos. Garantiza tu mesa en WhatsApp. <span class="text-whatsapp font-semibold mt-2 block">Reservar ahora &rarr;</span></p>
+            </a>
+
+            <a href="https://wa.me/34643512142?text=Hola,%20me%20gustar%C3%ADa%20hacer%20un%20pedido%20directo!" target="_blank" class="block bg-black/40 p-6 rounded-2xl border border-white/10 hover:border-brand-primary hover:bg-black/60 transition-all group flex flex-col items-center text-center shadow-lg">
+                <div class="w-14 h-14 bg-brand-primary/10 text-brand-primary rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <i class="ph ph-clock text-3xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-white">Atención Directa</h3>
+                <p class="text-gray-400 text-sm">Sin intermediarios ni tasas. Más rápido y directo para ti. <span class="text-brand-primary font-semibold mt-2 block">Pedir online &rarr;</span></p>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- EXIBIÇÃO (Reais Images via Unsplash) -->
+    <section class="py-16 px-4 bg-brand-dark border-b border-white/5">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold mb-4 text-white">Nuestras Especialidades</h2>
+                <p class="text-gray-400">Pide nuestro menú completo exclusivo por el chat.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Item 1 -->
+                <a href="https://wa.me/34643512142?text=Hola,%20quiero%20ver%20las%20bebidas%20y%20c%C3%B3cteles!" target="_blank" class="bg-zinc-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-1 border border-zinc-800 hover:border-brand-primary transition-all flex flex-col group">
+                    <div class="h-48 bg-zinc-800 overflow-hidden relative">
+                        <!-- Imagem real placeholder para bar -->
+                        <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100" alt="Bebidas">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h4 class="text-xl font-bold mb-2 text-white">Bebidas & Cócteles</h4>
+                        <p class="text-gray-400 text-sm mb-4 flex-grow">Refrescantes y exclusivas para acompañar tus mejores noches.</p>
+                        <span class="text-brand-primary font-bold text-sm">Pedir esto &rarr;</span>
+                    </div>
+                </a>
+                <!-- Item 2 -->
+                <a href="https://wa.me/34643512142?text=Hola,%20quiero%20pedir%20unas%20tapas!" target="_blank" class="bg-zinc-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-1 border border-zinc-800 hover:border-brand-primary transition-all flex flex-col group">
+                    <div class="h-48 bg-zinc-800 overflow-hidden relative">
+                        <!-- Imagem real placeholder para petiscos -->
+                        <img src="https://images.unsplash.com/photo-1515443961218-a51367888e4b?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100" alt="Tapas">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h4 class="text-xl font-bold mb-2 text-white">Tapas Clásicas</h4>
+                        <p class="text-gray-400 text-sm mb-4 flex-grow">El sabor tradicional perfecto para compartir entre amigos.</p>
+                        <span class="text-brand-primary font-bold text-sm">Pedir esto &rarr;</span>
+                    </div>
+                </a>
+                <!-- Item 3 -->
+                <a href="https://wa.me/34643512142?text=Hola,%20me%20gustar%C3%ADa%20saber%20cu%C3%A1l%20es%20la%20especialidad!" target="_blank" class="bg-zinc-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-1 border border-zinc-800 hover:border-brand-primary transition-all flex flex-col group">
+                    <div class="h-48 bg-zinc-800 overflow-hidden relative">
+                        <!-- Imagem real placeholder para lanches -->
+                        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100" alt="Especialidades">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h4 class="text-xl font-bold mb-2 text-white">Destaque de la Casa</h4>
+                        <p class="text-gray-400 text-sm mb-4 flex-grow">Consulta nuestra carta completa y sorpréndete.</p>
+                        <span class="text-brand-primary font-bold text-sm">Saber más &rarr;</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROVA SOCIAL E CONFIANÇA -->
+    <section class="py-16 px-4 bg-zinc-950 text-center border-b border-white/5 relative overflow-hidden">
+        <!-- Efeito visual de luz fluorescente ao fundo -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-2/3 bg-brand-primary/5 blur-[120px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-3xl mx-auto relative z-10">
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-6 text-white text-neon">No creas sólo en nosotros...</h2>
+            <p class="text-lg text-gray-400 mb-8">Mira lo que todo Valladolid está diciendo sobre Taramundi.</p>
+            <div class="flex items-center justify-center gap-4 mb-4">
+                <div class="flex text-brand-primary text-3xl drop-shadow-[0_0_8px_rgba(57,255,20,0.8)]">
+                    <i class="ph-fill ph-star"></i>
+                    <i class="ph-fill ph-star"></i>
+                    <i class="ph-fill ph-star"></i>
+                    <i class="ph-fill ph-star"></i>
+                    <i class="ph-fill ph-star-half"></i>
+                </div>
+                <span class="text-3xl font-bold text-white">4,5</span>
+            </div>
+            <p class="text-gray-400 font-medium">Basado en 205 valoraciones públicas en Google Maps.</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black py-12 px-4 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h3 class="text-2xl font-bold mb-4 border-b border-white/10 pb-4 inline-block text-white">
+                <span class="text-brand-primary">Taramundi</span> Bar
+            </h3>
+            <p class="text-gray-400 mb-2">
+                <a href="https://www.google.com/maps/place/Taramundi/@41.6387748,-4.7220116,17z" target="_blank" class="hover:text-brand-primary inline-flex items-center gap-1 justify-center transition-colors">
+                    <i class="ph-fill ph-map-pin"></i> C. Embajadores, 14, 47013 Valladolid, España
+                </a>
+            </p>
+            <p class="text-gray-400 mb-6 flex items-center justify-center gap-1">
+                <i class="ph-fill ph-phone-call"></i> +34 643 51 21 42
+            </p>
+
+            <p class="text-sm text-gray-600 mt-12">
+                &copy; 2026 Taramundi Bar. Todos los derechos reservados.<br>
+                Desarrollado para una experiencia ágil.
+            </p>
+        </div>
+    </footer>
+
+    <!-- FAB (Floating Action Button) WhatsApp corrigido para alta intenção -->
+    <a href="https://wa.me/34643512142?text=Hola!%20Me%20gustar%C3%ADa%20hacer%20un%20pedido/reserva%20ahora!" target="_blank" rel="noopener" class="fixed bottom-6 right-6 z-50 bg-whatsapp hover:bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(37,211,102,0.4)] transition-transform hover:scale-110 active:scale-95">
+        <i class="ph-fill ph-whatsapp text-3xl"></i>
+    </a>
+
+</body>
+</html>
