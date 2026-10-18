@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://www.losrombos.es/</loc>
+    <lastmod>2026-10-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.losrombos.es/fachada.jpg</image:loc>
+      <image:title>Bar Los Rombos Valladolid</image:title>
+      <image:caption>Fachada y ambiente de Bar Los Rombos en C. de la Transición 8, Valladolid</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.losrombos.es/galeria/bar-12-fachada-upgrade.jpg</image:loc>
+      <image:title>Salón y barra de Bar Los Rombos</image:title>
+      <image:caption>Interior de dos plantas de Bar Los Rombos en Valladolid</image:caption>
+    </image:image>
+  </url>
+</urlset>
