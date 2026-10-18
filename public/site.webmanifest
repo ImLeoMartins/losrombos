@@ -1,0 +1,18 @@
+{
+  "name": "Bar Los Rombos · Valladolid",
+  "short_name": "Los Rombos",
+  "description": "Sabor, cocina y buenos momentos en Valladolid. Desayunos, raciones, sartenes, bocadillos y platos combinados.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0F0D0A",
+  "theme_color": "#0F0D0A",
+  "lang": "es-ES",
+  "icons": [
+    {
+      "src": "/logo-256.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

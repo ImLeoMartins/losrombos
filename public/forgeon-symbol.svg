@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="195 235 840 790">
+  <title>Forgeon — F Symbol</title>
+  <defs>
+    <linearGradient id="fgTopLeft" gradientUnits="userSpaceOnUse" x1="202" y1="507" x2="484" y2="428">
+      <stop offset="0" stop-color="#8E52FA"/>
+      <stop offset="0.48" stop-color="#6A42FA"/>
+      <stop offset="1" stop-color="#3640F8"/>
+    </linearGradient>
+    <linearGradient id="fgTopBar" gradientUnits="userSpaceOnUse" x1="463" y1="242" x2="1025" y2="242">
+      <stop offset="0" stop-color="#8156F2"/>
+      <stop offset="0.42" stop-color="#3E2DF4"/>
+      <stop offset="0.72" stop-color="#5367F7"/>
+      <stop offset="1" stop-color="#83A6F7"/>
+    </linearGradient>
+    <linearGradient id="fgBottomLeft" gradientUnits="userSpaceOnUse" x1="214" y1="1019" x2="536" y2="697">
+      <stop offset="0" stop-color="#6326F4"/>
+      <stop offset="0.50" stop-color="#3E42F8"/>
+      <stop offset="0.83" stop-color="#5E79F8"/>
+      <stop offset="1" stop-color="#6686F7"/>
+    </linearGradient>
+    <linearGradient id="fgBottomBar" gradientUnits="userSpaceOnUse" x1="494" y1="505" x2="894" y2="505">
+      <stop offset="0" stop-color="#5D76F7"/>
+      <stop offset="0.45" stop-color="#474BFA"/>
+      <stop offset="0.72" stop-color="#5E74F8"/>
+      <stop offset="1" stop-color="#89ADF6"/>
+    </linearGradient>
+  </defs>
+  <path d="M 202,507 L 463,242 L 484,428 L 202,710 Z" fill="url(#fgTopLeft)"/>
+  <path d="M 463,242 L 1025,242 L 847,428 L 484,428 Z" fill="url(#fgTopBar)"/>
+  <path d="M 214,793 L 494,505 L 536,697 L 214,1019 Z" fill="url(#fgBottomLeft)"/>
+  <path d="M 494,505 L 894,505 L 706,697 L 536,697 Z" fill="url(#fgBottomBar)"/>
+</svg>

@@ -1,0 +1,444 @@
+@import "tailwindcss";
+
+@theme {
+  --color-noche: #0F0D0A;
+  --color-carbon: #1A1611;
+  --color-oro: #D4AF5A;
+  --color-oro-claro: #E9CC82;
+  --color-crema: #F1E8D4;
+  --color-arena: #C4B9A3;
+  --color-aviso: #F08A4B;
+  --color-neon: #D4AF5A;
+  --color-neon-dark: #B89342;
+  --color-neon-glow: #E9CC82;
+  --color-whatsapp-green: #25D366;
+  --color-whatsapp-green-dark: #128C7E;
+  --color-whatsapp-green-light: #DCF8C6;
+}
+
+body {
+  font-family: 'Jost', sans-serif;
+  background-color: #0F0D0A;
+  color: #F1E8D4;
+  -webkit-tap-highlight-color: rgba(212, 175, 90, 0.15);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Evita auto-zoom no iOS Safari ao focar inputs no mobile */
+@media (max-width: 767px) {
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* ── Tipografia Oficial: Gloock 400 + Jost 300/400/500 ── */
+.font-display {
+  font-family: 'Gloock', serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.font-lema {
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+@media (min-width: 768px) {
+  .font-lema {
+    letter-spacing: 0.22em;
+  }
+}
+
+/* ── Elementos do Sistema de Diseño (04 ELEMENTOS) ── */
+/* Moldura dupla: 50% + 20% ouro, cantos retos */
+.rombos-double-frame {
+  border: 1px solid rgba(212, 175, 90, 0.5);
+  outline: 1px solid rgba(212, 175, 90, 0.2);
+  outline-offset: -6px;
+  border-radius: 0;
+}
+
+/* Fundo madeira escura / Carbón com vinheta radial suave */
+.rombos-wood-panel {
+  background: radial-gradient(ellipse at 50% 25%, #231D16 0%, #1A1611 60%, #120F0B 100%);
+  border: 1px solid rgba(212, 175, 90, 0.28);
+  border-radius: 0;
+}
+
+/* Filete de secção: linha a 40% de ouro */
+.rombos-section-line {
+  height: 1px;
+  background-color: rgba(212, 175, 90, 0.4);
+}
+
+
+/* ── Botões com ponta de losango / cantos retos ── */
+.btn-poly {
+  clip-path: polygon(10px 0%, calc(100% - 10px) 0%, 100% 50%, calc(100% - 10px) 100%, 10px 100%, 0% 50%);
+  border-radius: 0;
+  transition: all 0.25s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  touch-action: manipulation;
+}
+
+/* ── Botão "Reservar Mesa" — estilo sóbrio com filete ouro ── */
+.btn-reserva-card {
+  backdrop-filter: blur(8px);
+  background: rgba(26, 22, 17, 0.85) !important;
+  border: 1px solid rgba(212, 175, 90, 0.45) !important;
+  color: #F1E8D4;
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+.btn-reserva-card:hover {
+  background: rgba(212, 175, 90, 0.15) !important;
+  border-color: #E9CC82 !important;
+  color: #E9CC82;
+}
+
+/* ── Hero navlinks flutuando ── */
+.hero-nav {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  backdrop-filter: blur(10px);
+  background: rgba(15, 13, 10, 0.85);
+  border: 1px solid rgba(212, 175, 90, 0.35);
+  padding: 8px 22px;
+  border-radius: 0;
+  z-index: 20;
+}
+.hero-nav a {
+  color: #F1E8D4;
+  font-size: 0.78rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  padding: 4px 12px;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+.hero-nav a:hover {
+  color: #E9CC82;
+}
+.hero-nav-sep {
+  width: 5px;
+  height: 5px;
+  background: #D4AF5A;
+  transform: rotate(45deg);
+  opacity: 0.65;
+}
+
+/* ── Mobile: hamburger + dropdown ── */
+.hero-mobile-btn {
+  display: none;
+  z-index: 55;
+  backdrop-filter: blur(10px);
+  background: rgba(15, 13, 10, 0.92);
+  border: 1px solid rgba(212, 175, 90, 0.5);
+  padding: 10px 14px;
+  min-height: 44px;
+  border-radius: 0;
+  cursor: pointer;
+  color: #D4AF5A;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.65);
+  touch-action: manipulation;
+}
+.hero-mobile-dropdown {
+  z-index: 55;
+  backdrop-filter: blur(14px);
+  background: #1A1611;
+  border: 1px solid rgba(212, 175, 90, 0.5);
+  border-radius: 0;
+  overflow: hidden;
+  min-width: 200px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.85);
+}
+.hero-mobile-dropdown a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  color: #F1E8D4;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  transition: color 0.2s, background 0.2s;
+  border-bottom: 1px solid rgba(212, 175, 90, 0.15);
+}
+.hero-mobile-dropdown a:last-child {
+  border-bottom: none;
+}
+.hero-mobile-dropdown a:hover,
+.hero-mobile-dropdown a:active {
+  color: #E9CC82;
+  background: rgba(212, 175, 90, 0.12);
+}
+
+@media (max-width: 767px) {
+  .hero-nav {
+    display: none;
+  }
+  .hero-mobile-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+}
+@media (min-width: 768px) {
+  .hero-mobile-btn {
+    display: none;
+  }
+  .hero-mobile-dropdown {
+    display: none !important;
+  }
+}
+
+.hero-gradient {
+  background: radial-gradient(ellipse at center, rgba(15, 13, 10, 0.62) 0%, rgba(15, 13, 10, 0.9) 100%);
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cart-float {
+  position: fixed;
+  bottom: 24px;
+  left: 20px;
+  z-index: 90;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: #0F0D0A;
+  color: #D4AF5A;
+  border: 1.5px solid #D4AF5A;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.card-hover {
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+@media (hover: hover) {
+  .card-hover:hover {
+    transform: translateY(-3px);
+    border-color: rgba(212, 175, 90, 0.55);
+  }
+}
+
+.whatsapp-diamond {
+  transform: rotate(45deg);
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0;
+  border: 1px solid rgba(212, 175, 90, 0.55);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.75);
+}
+
+@media (min-width: 768px) {
+  .whatsapp-diamond {
+    width: 58px;
+    height: 58px;
+  }
+}
+
+.whatsapp-diamond i {
+  transform: rotate(-45deg);
+}
+
+.hero-section {
+  position: relative;
+}
+
+.hero-info-cards-wrapper {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .hero-info-cards-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .hero-info-card {
+    transition: border-color 0.25s ease, background 0.25s ease;
+    cursor: default;
+  }
+
+  .hero-info-card:hover {
+    border-color: rgba(212, 175, 90, 0.55);
+    background: rgba(26, 22, 17, 0.9) !important;
+  }
+}
+
+/* Logo grande: oculta no mobile, visível no desktop (coluna direita) */
+.hero-logo-container {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .hero-logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.hero-logo-container img {
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  object-fit: contain;
+  filter:
+    drop-shadow(0 0 80px rgba(0, 0, 0, 1))
+    drop-shadow(0 0 40px rgba(0, 0, 0, 0.95))
+    drop-shadow(0 0 20px rgba(0, 0, 0, 0.9))
+    drop-shadow(0 4px 24px rgba(0, 0, 0, 0.85));
+}
+
+.footer-logo-shadow {
+  filter:
+    drop-shadow(0 0 18px rgba(0, 0, 0, 0.95))
+    drop-shadow(0 2px 8px rgba(0, 0, 0, 0.85));
+}
+
+.modal-backdrop {
+  background: rgba(15, 13, 10, 0.88);
+  backdrop-filter: blur(6px);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0F0D0A;
+}
+::-webkit-scrollbar-thumb {
+  background: #D4AF5A;
+  border-radius: 0;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ── Galería ── */
+.gallery-stage {
+  aspect-ratio: 4 / 3;
+}
+@media (min-width: 768px) {
+  .gallery-stage {
+    aspect-ratio: 16 / 9;
+  }
+}
+.gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 13, 10, 0.82);
+  border: 1px solid rgba(212, 175, 90, 0.45);
+  color: #F1E8D4;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  z-index: 5;
+  touch-action: manipulation;
+}
+.gallery-arrow:hover,
+.gallery-arrow:active {
+  background: #D4AF5A;
+  border-color: #D4AF5A;
+  color: #0F0D0A;
+}
+.gallery-progress {
+  width: 0;
+  animation-name: galleryProgress;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+@keyframes galleryProgress {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* ── Stepper de cantidad (mínimo 36px no mobile para toque fácil) ── */
+.qty-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(212, 175, 90, 0.35);
+  background: #0F0D0A;
+  color: #F1E8D4;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  touch-action: manipulation;
+}
+.qty-btn:hover,
+.qty-btn:active {
+  background: #D4AF5A;
+  border-color: #D4AF5A;
+  color: #0F0D0A;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-stage figure {
+    transition: none;
+  }
+}
+
