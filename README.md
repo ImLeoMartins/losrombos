@@ -88,6 +88,4 @@ los-rombos/
 © 2026 Forgeon
 
 **Cliente:** Los Rombos Bar (uso autorizado)  
-**Desenvolvedores:** 
-Leo-Forge (@ImLeoMartins) | 
-VN-Studio (@SrViniih)
+
